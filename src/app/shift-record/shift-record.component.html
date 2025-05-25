@@ -1,0 +1,49 @@
+<div class="shift-record-page">
+  <header class="top-navbar">
+    <div class="navbar-logo">
+      <img src="/assets/fondo-salud-total.jpeg" alt="Logo Salud Total"> </div>
+    <div class="navbar-actions">
+      <button (click)="verCitasPendientes()" title="Citas Pendientes" class="navbar-btn">
+        <i class="icon-cita-pendiente"></i> <span>Citas Pendientes</span>
+      </button>
+      <button (click)="verNotificaciones()" title="Notificaciones" class="navbar-btn">
+        <i class="icon-notificacion"></i> <span>Notificaciones</span>
+      </button>
+      <button (click)="verPerfilUsuario()" title="Perfil de Usuario" class="navbar-btn user-btn">
+        <i class="icon-usuario"></i> <span>{{ nombreUsuario }}</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="welcome-message">
+      <h2>¡Bienvenido, {{ nombreUsuario }}! Registra tu turno de forma rápida y sencilla.</h2>
+    </div>
+
+    <div class="search-section">
+      <h3>Busca tu médico o especialidad</h3>
+      <div class="search-bar-container">
+        <input type="text" class="search-input" placeholder="Escribe el nombre del médico, especialidad..."
+               [(ngModel)]="searchTerm" (ngModelChange)="filtrarEspecialidades()">
+        <button class="search-button" (click)="filtrarEspecialidades()">Buscar</button>
+      </div>
+    </div>
+
+    <section class="specialties-section">
+      <h3>Nuestras Especialidades</h3>
+      <div class="specialties-grid" *ngIf="especialidadesFiltradas.length > 0; else noEspecialidades">
+        <div class="specialty-card" *ngFor="let esp of especialidadesFiltradas">
+          <img [src]="esp.iconoUrl" [alt]="esp.nombre" class="specialty-icon">
+          <h4>{{ esp.nombre }}</h4>
+          <p>{{ esp.descripcion }}</p>
+          <button (click)="verMedicosPorEspecialidad(esp.id)" class="btn-view-doctors">
+            Ver Médicos
+          </button>
+        </div>
+      </div>
+      <ng-template #noEspecialidades>
+        <p class="no-results-message">No se encontraron especialidades que coincidan con tu búsqueda.</p>
+      </ng-template>
+    </section>
+  </main>
+</div>

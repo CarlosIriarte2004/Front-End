@@ -1,0 +1,180 @@
+/* src/app/shift-record/shift-record.component.css */
+.shift-record-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #66AABF
+}
+
+/* --- Barra de Navegación Superior --- */
+.top-navbar {
+  background-color: #088181; /* Color de fondo de ejemplo */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6; /* Borde sutil */
+  position: fixed; /* Para que se quede fija arriba */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Para que esté sobre otro contenido */
+  height: 60px; /* Altura fija de ejemplo */
+}
+
+.navbar-logo img {
+  height: 40px; /* Ajusta el tamaño de tu logo */
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.navbar-btn i { /* Para los íconos */
+  margin-right: 5px;
+  font-size: 1.2em; /* Ajusta el tamaño del ícono */
+}
+
+.user-btn {
+  font-weight: bold;
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+  padding-top: 80px; /* Espacio para dejar visible la navbar fija (altura de navbar + un poco más) */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  flex-grow: 1;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.welcome-message h2 {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
+/* --- Sección de Búsqueda --- */
+.search-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-section h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px; /* Bordes redondeados a la izquierda */
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007bff; /* Color de ejemplo */
+  color: white;
+  border: 1px solid #007bff;
+  border-radius: 0 4px 4px 0; /* Bordes redondeados a la derecha */
+  cursor: pointer;
+}
+
+/* --- Sección de Especialidades --- */
+.specialties-section {
+  margin-top: 30px;
+}
+
+.specialties-section h3 {
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+  gap: 15px; /* Espacio entre tarjetas */
+}
+
+.specialty-card {
+  border: 3px solid #000000;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  max-width: 200px; /* O el ancho máximo que consideres estético para una tarjeta individual, ej: 300px, 320px, etc. */
+  width: 100%; /* Esto permite que sea responsiva hasta alcanzar el max-width */
+  margin-left: auto;  /* Estas dos líneas centrarán la tarjeta si la celda de la cuadrícula es más ancha */
+  margin-right: auto; /* que el max-width de la tarjeta. */
+  /* Si solo quieres que se alinee a la izquierda cuando hay una sola, no añadas los márgenes auto */
+}
+
+.specialty-icon {
+  width: 90px; /* Ajusta según tus íconos */
+  height: 90px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.specialty-card h4 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #000000; /* Color de ejemplo */
+}
+
+.specialty-card p {
+  font-size: 0.95em;
+  color: #000000;
+  margin-bottom: 15px;
+  min-height: 50px; /* Para alinear tarjetas si las descripciones varían en longitud */
+}
+
+.btn-view-doctors {
+  background-color: #28a745; /* Color de ejemplo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.btn-view-doctors:hover {
+  background-color: #218838; /* Color más oscuro para hover */
+}
+
+.no-results-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: #777;
+  padding: 30px;
+}

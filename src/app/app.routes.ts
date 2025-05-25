@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { PatientLoginComponent } from './patient-login/patient-login.component'; // Verifica que esta ruta sea correcta a tu archivo .ts
 import { AdminLoginComponent } from './admin-login/admin-login.component';     // Verifica que esta ruta sea correcta a tu archivo .ts
 import { HospitalLoginComponent} from './hospital-login/hospital-login.component';
+import { ShiftRecordComponent } from './shift-record/shift-record.component';
 
 export const routes: Routes = [
   // Ruta para la página de login de paciente
@@ -17,6 +18,11 @@ export const routes: Routes = [
   {
     path: 'login-hospital',
     component: HospitalLoginComponent
+  },
+
+  {
+    path: 'registro-turno', 
+    component: ShiftRecordComponent
   },
   // --- Rutas Adicionales Recomendadas ---
 
