@@ -45,11 +45,11 @@ export class ShiftRecordComponent implements OnInit {
   cargarEspecialidades(): void {
     // Datos simulados (mock data) - En un futuro, esto vendría de un servicio/API
     this.especialidades = [
-      { id: 'cardiologia', nombre: 'Cardiología', descripcion: 'Cuidado del corazón y sistema circulatorio.', iconoUrl: '/assets/iconos/cardio.png' },
-      { id: 'dermatologia', nombre: 'Dermatología', descripcion: 'Enfermedades de la piel, cabello y uñas.', iconoUrl: '/assets/iconos/dermatologia.png' },
-      { id: 'pediatria', nombre: 'Pediatría', descripcion: 'Salud y enfermedades de los niños.', iconoUrl: '/assets/iconos/pediatria.png' },
-      { id: 'ginecologia', nombre: 'Ginecología', descripcion: 'Salud del sistema reproductor femenino.', iconoUrl: '/assets/iconos/ginecologia.png' },
-      { id: 'traumatologia', nombre: 'Traumatología', descripcion: 'Lesiones del aparato locomotor.', iconoUrl: '/assets/iconos/traumatologia.png' },
+      { id: 'cardiologia', nombre: 'Cardiologia', descripcion: 'Cuidado del corazón y sistema circulatorio.', iconoUrl: '/assets/iconos/cardio.png' },
+      { id: 'dermatologia', nombre: 'Dermatologia', descripcion: 'Enfermedades de la piel, cabello y uñas.', iconoUrl: '/assets/iconos/dermatologia.png' },
+      { id: 'pediatria', nombre: 'Pediatria', descripcion: 'Salud y enfermedades de los niños.', iconoUrl: '/assets/iconos/pediatria.png' },
+      { id: 'ginecologia', nombre: 'Ginecologia', descripcion: 'Salud del sistema reproductor femenino.', iconoUrl: '/assets/iconos/ginecologia.png' },
+      { id: 'traumatologia', nombre: 'Traumatologia', descripcion: 'Lesiones del aparato locomotor.', iconoUrl: '/assets/iconos/traumatologia.png' },
       { id: 'hematologia', nombre: 'Hematologia', descripcion: 'Enfermedades de la sangre y en organos hematopoyéticos.', iconoUrl: '/assets/iconos/hematologia.png' }
 
       // ... añade más especialidades según necesites
