@@ -1,0 +1,11 @@
+body {
+  margin: 0; 
+  font-family: 'Inter', sans-serif; /* Usa la fuente Inter o una genérica */
+  background-color: #f0f2f5; /* Un color de fondo suave para toda la página */
+  display: flex; /* Para centrar el contenido vertical y horizontalmente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+  overflow: hidden; /* Evita barras de desplazamiento si el contenido es más pequeño */
+}
+

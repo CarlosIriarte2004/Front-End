@@ -1,0 +1,134 @@
+/* login-medico/login-medico.component.css */
+
+/* Contenedor principal para centrar el formulario */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tarjeta o caja blanca del formulario */
+.login-card {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 30px; /* Relleno interior ajustado para el boceto */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra más suave y definida */
+  width: 100%;
+  max-width: 380px; /* Ancho máximo ajustado para el boceto */
+  text-align: center;
+  box-sizing: border-box;
+  position: relative; /* Necesario para posicionar el logo si sobresale */
+}
+
+/* Área del logo */
+.logo-area {
+  /* No necesitamos margin-bottom aquí, el margin de .app-logo lo manejará */
+  margin-top: -80px; /* Mueve el logo hacia arriba para que sobresalga de la tarjeta */
+  margin-bottom: 20px; /* Espacio entre el logo y el título */
+}
+
+.app-logo {
+  width: 180px; /* Tamaño del logo según el boceto */
+  height: 180px; /* Mantener proporción */
+  border-radius: 50%; /* Si el logo es circular, asegúrate de que se vea así */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  display: block;
+  margin: 0 auto; /* Centra el logo */
+  /*border: 4px solid #ffffff; /* Borde blanco alrededor del logo para el efecto de "salida" */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el logo */
+}
+
+/* Título de la página de inicio de sesión */
+.login-title {
+  font-size: 1.8rem; /* Tamaño de la fuente ajustado */
+  font-weight: 600; /* Peso de la fuente */
+  color: #333333;
+  margin-bottom: 30px; /* Espacio debajo del título */
+  text-align: left; /* Alineado a la izquierda como en el boceto */
+  padding-left: 10px; /* Pequeño padding para alinear con los inputs */
+}
+
+/* Formulario */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los grupos de formulario ajustado */
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el input ajustado */
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px; /* Relleno interno ajustado */
+  border: 1px solid #dddddd; /* Borde más claro */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  font-size: 1rem;
+  color: #333333;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2); /* Sombra más sutil al enfocar */
+}
+
+/* Botón de iniciar sesión */
+.login-button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333333; /* Color de fondo oscuro */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 20px; /* Espacio encima del botón ajustado */
+}
+
+.login-button:hover {
+  background-color: #555555;
+}
+
+/* Enlace de "Olvidó su contraseña" */
+.forgot-password-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot-password-link a {
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.forgot-password-link a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Mensaje de error */
+.error-message {
+  margin-top: 20px;
+  color: #dc3545;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

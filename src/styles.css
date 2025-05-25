@@ -1,7 +1,46 @@
-html, body {
+/* src/styles.css */
+
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  /* Aquí está la clave para la imagen de fondo */
+  background-image: url('assets/images/fondo-inicio-de-sesion-medico.jpg'); /* ¡Asegúrate de que esta ruta sea la CORRECTA para tu imagen! */
+  background-size: cover;
+  background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  z-index: 0; /* Asegura que el contenido esté por encima */
 }
 
+/* Pseudo-elemento para aplicar el desenfoque solo al fondo */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; /* Hereda la imagen de fondo del body */
+  background-size: cover;
+  background-position: center center;
+  z-index: -1; /* detrás del contenido del body */
+}
+
+/* Puedes añadir más estilos globales aquí si los necesitas para la tipografía base, etc. */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
+/* Importante: para que el contenido no herede el filtro blur, aseguramos que el login-container y login-card no lo tengan 
+.login-container, .login-card {
+    filter: none; Asegura que el contenido no se vea borroso 
+    -webkit-filter: none;
+}*/
