@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router, RouterModule } from '@angular/router'; 
 import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-welcome',
   standalone: true, 
   imports: [
-    CommonModule    
+    CommonModule,
+    RouterModule  
 
   ],
   templateUrl: './welcome.component.html',
@@ -21,7 +22,7 @@ export class WelcomeComponent {
   }
 
   navegarLoginMedico(): void {
-    this.router.navigate(['/login-medico']); 
+    this.router.navigate(['/login-doctor']); 
   }
 
   navegarLoginAdmin(): void {
@@ -31,4 +32,5 @@ export class WelcomeComponent {
   navegarLoginHospital(): void {
     this.router.navigate(['/login-hospital']);
   }
+
 }

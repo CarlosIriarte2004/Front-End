@@ -1,0 +1,44 @@
+<div class="medico-page-container">
+  <header class="header">
+    <div class="header-top">
+      <div class="logo-section">
+        <img src="/assets/images/logo-salud-total-bolivia-sin-fondo.png" alt="Logo de la página" class="logo-icon">
+        <span class="page-title">Pagina de médico</span>
+      </div>
+      <div class="emergency-contact">
+        <span class="emergency-label">EMERGENCY</span>
+        <span class="emergency-number">( 237 ) 681-812-255</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#" class="nav-link">Sobre Nosotros</a></li>
+        <li><a href="#" class="nav-link">Contacto de servicio técnico</a></li>
+        <li><a href="#" class="nav-link">Calendario</a></li>
+        <li><a href="#" class="nav-link">Nuevo turno</a></li>
+        <li><a href="#" class="nav-link">Inicio de consulta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="inbox-title">Bandeja de entrada</h2>
+
+    <div class="appointments-grid">
+      <div *ngFor="let turno of turnosRegistrados" class="appointment-card">
+        <div class="card-header">
+          <span class="card-title">Nuevo turno registrado</span>
+          <button class="close-button">X</button>
+        </div>
+        <div class="card-body">
+          <p><strong>Paciente:</strong> {{ turno.paciente }}</p>
+          <p><strong>Fecha:</strong> {{ turno.fecha }}</p>
+          <p><strong>Hora:</strong> {{ turno.hora }}</p>
+        </div>
+        <div class="card-footer">
+          <button class="view-calendar-button" (click)="verEnCalendario(turno)">Ver en calendario</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
