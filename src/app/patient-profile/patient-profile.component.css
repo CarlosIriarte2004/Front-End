@@ -1,0 +1,190 @@
+:host {
+  display: block;
+  background-color: #66AABF; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 30px; 
+}
+
+.profile-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 1.8em;
+  color: #000000;
+  margin-bottom: 25px;
+  text-align: left; 
+  padding-left: 10px; 
+}
+
+.patient-info-card {
+  background-color: #e0f2f7; 
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 25px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.profile-picture-section {
+  flex-basis: 180px; 
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 4px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.patient-details-section {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+}
+
+.detail-row {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px; 
+  margin-bottom: 8px; 
+}
+
+.detail-item {
+  flex: 1 1 calc(50% - 10px); 
+  min-width: 280px; 
+  display: flex;
+  align-items: center;
+  font-size: 0.95em;
+  color: #33475b; 
+}
+
+.detail-icon {
+  margin-right: 10px;
+  font-size: 1.2em; 
+  color: #007bff; 
+  min-width: 20px; 
+  text-align: center;
+}
+
+.detail-label {
+  font-weight: 600; 
+  margin-right: 6px;
+  color: #506a80;
+}
+
+.detail-value {
+  color: #2a3b4c;
+}
+
+.email-value {
+  color: #0056b3; 
+}
+
+.status-value {
+  font-weight: bold;
+  color: #28a745; 
+}
+
+.details-divider {
+  border: 0;
+  height: 1px;
+  background-color: #b3cde0; 
+  margin: 15px 0;
+}
+
+.medical-history-section {
+  position: relative; 
+  background-image: url('/assets/images/fondo-patient-profile.png'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 250px; 
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.history-title-overlay {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.history-title-overlay h2 {
+  font-size: 2.8em;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); 
+  margin: 0; 
+}
+
+.history-content {
+  background-color: rgba(255, 255, 255, 0.85); 
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 800px; 
+  margin-top: 20px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.history-item:last-child {
+  border-bottom: none;
+}
+.history-item strong {
+  color: #0056b3;
+}
+
+
+@media (max-width: 992px) {
+  .patient-info-card {
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .profile-picture-section {
+    margin-bottom: 20px; 
+  }
+  .patient-details-section {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.5em;
+  }
+  .detail-item {
+    flex-basis: 100%; 
+    min-width: auto;
+  }
+  .history-title-overlay h2 {
+    font-size: 2em;
+  }
+  .medical-history-section {
+    min-height: 200px;
+  }
+}
