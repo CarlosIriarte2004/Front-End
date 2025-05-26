@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // PASO 1: Importa CommonModule
+import { CommonModule } from '@angular/common'; 
 
-// ... (tus otras importaciones como PacienteInfo, HistorialEntry)
 
 export interface PacienteInfo {
   nombreCompleto: string;
@@ -32,10 +31,9 @@ export interface HistorialEntry {
   selector: 'app-patient-profile',
   templateUrl: './patient-profile.component.html',
   styleUrls: ['./patient-profile.component.css'],
-  standalone: true, // Asegúrate que esta línea exista si es standalone
+  standalone: true, 
   imports: [
-    CommonModule // PASO 2: Añade CommonModule al array de imports
-    // Si tienes otros módulos o componentes standalone que este usa, también van aquí
+    CommonModule 
   ]
 })
 export class PatientProfileComponent implements OnInit {

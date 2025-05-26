@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 
-/* Contenedor principal del formulario */
 .registration-container {
   background-color: #4A8C8C;
   padding: 30px 40px;
@@ -22,7 +21,6 @@
   gap: 25px;
 }
 
-/* Estilos para el encabezado (REGISTRATE y logo) */
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +29,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Estilos para el título "REGISTRATE" */
 .title {
   color: #FFFFFF; 
   font-size: 2.5em; 
@@ -41,7 +38,6 @@
   margin: 0; 
 }
 
-/* Estilos para el contenedor del logo */
 .logo img {
   width: 90px;
   height: 90px; 
@@ -50,14 +46,12 @@
   object-fit: cover;
 }
 
-/* Estilos para el formulario en sí */
 .registration-form {
   display: flex;
   flex-direction: column;
   gap: 20px; 
 }
 
-/* Estilos para cada fila del formulario */
 .form-row {
   display: flex;
   flex-wrap: wrap;
@@ -65,12 +59,10 @@
   align-items: center;
 }
 
-/* Estilos para filas con dos columnas */
 .form-row.two-columns {
   justify-content: space-between; 
 }
 
-/* Estilos para los grupos de entrada (label + input) */
 .input-group {
   flex: 1; 
   min-width: 280px; 
@@ -79,7 +71,6 @@
   gap: 8px;
 }
 
-/* Estilos para las etiquetas (labels) */
 label {
   color: #E0F2F1; 
   font-size: 1.1em;
@@ -87,7 +78,6 @@ label {
   margin-bottom: 5px; 
 }
 
-/* Estilos para los campos de entrada (inputs) */
 input[type="text"],
 input[type="email"],
 input[type="date"] {
@@ -110,7 +100,6 @@ input[type="date"]:focus {
   background-color: #FFFFFF;
 }
 
-/* Estilo para la fila de entrada de ancho completo (Direccion, Correo) */
 .form-row.full-width-input {
   flex-direction: column; 
   align-items: flex-start; 
@@ -120,7 +109,6 @@ input[type="date"]:focus {
   width: 100%; 
 }
 
-/* Estilos para el botón "Crear cuenta" */
 button[type="submit"] {
   background-color: #212121; 
   color: #FFFFFF;
@@ -147,7 +135,6 @@ button[type="submit"]:active {
 }
 
 
-/* Pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
   .registration-container {
     padding: 20px 25px; 
@@ -190,7 +177,6 @@ button[type="submit"]:active {
   }
 }
 
-/* Pantallas muy pequeñas (móviles estrechos) */
 @media (max-width: 480px) {
   .registration-container {
     padding: 15px;

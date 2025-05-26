@@ -38,11 +38,5 @@ export class PatientLoginComponent {
 
   onForgotPassword(): void {
     console.log('Olvidó su contraseña presionado');
-    // Aquí podrías añadir la lógica para manejar el olvido de contraseña
   }
-  /*
-  goToRegistro(): void {
-    this.router.navigate(['/registro-paciente']);
-  }
-  */
 }

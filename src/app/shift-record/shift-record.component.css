@@ -1,4 +1,3 @@
-/* src/app/shift-record/shift-record.component.css */
 .shift-record-page {
   display: flex;
   flex-direction: column;
@@ -6,24 +5,23 @@
   background-color: #66AABF
 }
 
-/* --- Barra de Navegación Superior --- */
 .top-navbar {
-  background-color: #088181; /* Color de fondo de ejemplo */
+  background-color: #088181; 
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #dee2e6; /* Borde sutil */
-  position: fixed; /* Para que se quede fija arriba */
+  border-bottom: 1px solid #dee2e6; 
+  position: fixed; 
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Para que esté sobre otro contenido */
-  height: 60px; /* Altura fija de ejemplo */
+  z-index: 1000; 
+  height: 60px; 
 }
 
 .navbar-logo img {
-  height: 80px; /* Ajusta el tamaño de tu logo */
+  height: 80px; 
 }
 
 .navbar-actions {
@@ -41,18 +39,17 @@
   font-size: 0.9em;
 }
 
-.navbar-btn i { /* Para los íconos */
+.navbar-btn i { 
   margin-right: 5px;
-  font-size: 1.2em; /* Ajusta el tamaño del ícono */
+  font-size: 1.2em; 
 }
 
 .user-btn {
   font-weight: bold;
 }
 
-/* --- Contenido Principal --- */
 .main-content {
-  padding-top: 80px; /* Espacio para dejar visible la navbar fija (altura de navbar + un poco más) */
+  padding-top: 80px; 
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -70,7 +67,6 @@
   font-weight: normal;
 }
 
-/* --- Sección de Búsqueda --- */
 .search-section {
   text-align: center;
   margin-bottom: 40px;
@@ -94,20 +90,19 @@
   padding: 10px 15px;
   font-size: 1em;
   border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px; /* Bordes redondeados a la izquierda */
+  border-radius: 4px 0 0 4px; 
 }
 
 .search-button {
   padding: 10px 20px;
   font-size: 1em;
-  background-color: #007bff; /* Color de ejemplo */
+  background-color: #007bff; 
   color: white;
   border: 1px solid #007bff;
-  border-radius: 0 4px 4px 0; /* Bordes redondeados a la derecha */
+  border-radius: 0 4px 4px 0; 
   cursor: pointer;
 }
 
-/* --- Sección de Especialidades --- */
 .specialties-section {
   margin-top: 30px;
 }
@@ -121,8 +116,8 @@
 
 .specialties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
-  gap: 15px; /* Espacio entre tarjetas */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 15px; 
 }
 
 .specialty-card {
@@ -131,15 +126,14 @@
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  max-width: 200px; /* O el ancho máximo que consideres estético para una tarjeta individual, ej: 300px, 320px, etc. */
-  width: 100%; /* Esto permite que sea responsiva hasta alcanzar el max-width */
-  margin-left: auto;  /* Estas dos líneas centrarán la tarjeta si la celda de la cuadrícula es más ancha */
-  margin-right: auto; /* que el max-width de la tarjeta. */
-  /* Si solo quieres que se alinee a la izquierda cuando hay una sola, no añadas los márgenes auto */
+  max-width: 200px; 
+  width: 100%; 
+  margin-left: auto;  
+  margin-right: auto; 
 }
 
 .specialty-icon {
-  width: 90px; /* Ajusta según tus íconos */
+  width: 90px; 
   height: 90px;
   margin-bottom: 15px;
   object-fit: contain;
@@ -148,18 +142,18 @@
 .specialty-card h4 {
   font-size: 1.3em;
   margin-bottom: 10px;
-  color: #000000; /* Color de ejemplo */
+  color: #000000; 
 }
 
 .specialty-card p {
   font-size: 0.95em;
   color: #000000;
   margin-bottom: 15px;
-  min-height: 50px; /* Para alinear tarjetas si las descripciones varían en longitud */
+  min-height: 50px; 
 }
 
 .btn-view-doctors {
-  background-color: #28a745; /* Color de ejemplo */
+  background-color: #28a745; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -169,7 +163,7 @@
 }
 
 .btn-view-doctors:hover {
-  background-color: #218838; /* Color más oscuro para hover */
+  background-color: #218838; 
 }
 
 .no-results-message {

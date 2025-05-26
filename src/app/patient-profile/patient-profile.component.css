@@ -1,8 +1,8 @@
 :host {
   display: block;
-  background-color: #66AABF; /* Un fondo gris claro para toda la página */
+  background-color: #66AABF; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-bottom: 30px; /* Espacio al final */
+  padding-bottom: 30px; 
 }
 
 .profile-page-container {
@@ -15,72 +15,71 @@
   font-size: 1.8em;
   color: #000000;
   margin-bottom: 25px;
-  text-align: left; /* O center si prefieres */
-  padding-left: 10px; /* Para alinear con la tarjeta de información */
+  text-align: left; 
+  padding-left: 10px; 
 }
 
-/* Tarjeta de Información del Paciente */
 .patient-info-card {
-  background-color: #e0f2f7; /* Azul claro/celeste como en la imagen */
+  background-color: #e0f2f7; 
   border-radius: 10px;
   padding: 25px;
   display: flex;
-  flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
-  gap: 25px; /* Espacio entre la foto y los detalles */
+  flex-wrap: wrap; 
+  gap: 25px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 30px;
 }
 
 .profile-picture-section {
-  flex-basis: 180px; /* Ancho base para la sección de la foto */
+  flex-basis: 180px; 
   flex-shrink: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Alinea la foto arriba */
+  align-items: flex-start; 
 }
 
 .profile-picture {
   width: 150px;
   height: 150px;
-  border-radius: 50%; /* Hace la imagen circular */
-  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  border-radius: 50%; 
+  object-fit: cover; 
   border: 4px solid #ffffff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .patient-details-section {
-  flex-grow: 1; /* Ocupa el espacio restante */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Espacio entre filas de detalles */
+  gap: 8px; 
 }
 
 .detail-row {
   display: flex;
-  flex-wrap: wrap; /* Permite que los items pasen abajo si no caben */
-  gap: 15px; /* Espacio entre items en la misma fila */
-  margin-bottom: 8px; /* Espacio ligero entre grupos de filas */
+  flex-wrap: wrap; 
+  gap: 15px; 
+  margin-bottom: 8px; 
 }
 
 .detail-item {
-  flex: 1 1 calc(50% - 10px); /* Cada item trata de ocupar el 50% menos el gap */
-  min-width: 280px; /* Ancho mínimo para evitar que se encojan demasiado */
+  flex: 1 1 calc(50% - 10px); 
+  min-width: 280px; 
   display: flex;
   align-items: center;
   font-size: 0.95em;
-  color: #33475b; /* Color de texto oscuro */
+  color: #33475b; 
 }
 
 .detail-icon {
   margin-right: 10px;
-  font-size: 1.2em; /* Tamaño del icono de texto */
-  color: #007bff; /* Color para los iconos, puedes ajustarlo */
-  min-width: 20px; /* Para alinear bien los labels */
+  font-size: 1.2em; 
+  color: #007bff; 
+  min-width: 20px; 
   text-align: center;
 }
 
 .detail-label {
-  font-weight: 600; /* Semibold */
+  font-weight: 600; 
   margin-right: 6px;
   color: #506a80;
 }
@@ -90,63 +89,57 @@
 }
 
 .email-value {
-  color: #0056b3; /* Para que el email parezca un enlace */
-  /* text-decoration: underline; */ /* Opcional */
+  color: #0056b3; 
 }
 
 .status-value {
   font-weight: bold;
-  color: #28a745; /* Verde para "No penalizado", podrías cambiarlo según el estado */
+  color: #28a745; 
 }
 
 .details-divider {
   border: 0;
   height: 1px;
-  background-color: #b3cde0; /* Color del divisor */
+  background-color: #b3cde0; 
   margin: 15px 0;
 }
 
-/* Sección de Historial Médico */
 .medical-history-section {
-  position: relative; /* Para el overlay del título */
-  background-image: url('/assets/images/fondo-patient-profile.png'); /* Placeholder */
-  /* Descomenta y usa tu imagen de fondo: */
-  /* background-image: url('assets/images/hospital-corridor-blurred.jpg'); */
+  position: relative; 
+  background-image: url('/assets/images/fondo-patient-profile.png'); 
   background-size: cover;
   background-position: center;
-  min-height: 250px; /* Altura mínima */
+  min-height: 250px; 
   border-radius: 8px;
   display: flex;
-  flex-direction: column; /* Para que el contenido esté debajo del título si es necesario */
-  justify-content: center; /* Centra el título verticalmente si es lo único */
-  align-items: center; /* Centra el título horizontalmente */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .history-title-overlay {
-  /* No es estrictamente un overlay si la imagen tiene suficiente contraste */
-  /* Si la imagen de fondo es muy clara, podrías añadir un fondo semitransparente aquí */
   text-align: center;
-  margin-bottom: 20px; /* Espacio si hay contenido debajo */
+  margin-bottom: 20px; 
 }
 
 .history-title-overlay h2 {
   font-size: 2.8em;
   color: #ffffff;
   font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra para legibilidad sobre la imagen */
-  margin: 0; /* Quitar margen por defecto del h2 */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); 
+  margin: 0; 
 }
 
 .history-content {
-  background-color: rgba(255, 255, 255, 0.85); /* Fondo semi-transparente para el contenido */
+  background-color: rgba(255, 255, 255, 0.85); 
   color: #333;
   padding: 20px;
   border-radius: 6px;
   width: 100%;
-  max-width: 800px; /* Ancho máximo para el contenido del historial */
-  margin-top: 20px; /* Espacio desde el título si el título no está centrado completamente */
+  max-width: 800px; 
+  margin-top: 20px; 
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -167,17 +160,16 @@
 }
 
 
-/* Media queries para responsividad */
 @media (max-width: 992px) {
   .patient-info-card {
-    flex-direction: column; /* Foto arriba, detalles abajo */
-    align-items: center; /* Centrar la foto */
+    flex-direction: column; 
+    align-items: center; 
   }
   .profile-picture-section {
-    margin-bottom: 20px; /* Espacio si la foto está arriba */
+    margin-bottom: 20px; 
   }
   .patient-details-section {
-    width: 100%; /* Que los detalles ocupen todo el ancho */
+    width: 100%; 
   }
 }
 
@@ -186,7 +178,7 @@
     font-size: 1.5em;
   }
   .detail-item {
-    flex-basis: 100%; /* Un item por fila en pantallas pequeñas */
+    flex-basis: 100%; 
     min-width: auto;
   }
   .history-title-overlay h2 {
