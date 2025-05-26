@@ -1,16 +1,15 @@
-// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // O solo RouterOutlet si no necesitas más de RouterModule aquí
+import { RouterModule } from '@angular/router'; 
 
 @Component({
-  selector: 'app-root', // o tu selector de AppComponent
+  selector: 'app-root', 
   standalone: true,
   imports: [
-    RouterModule // <-- Asegúrate de tener esto
+  RouterModule 
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sisinfo1-Proyec'; // Asumo que este es el nombre de tu proyecto
+  title = 'sisinfo1-Proyec'; 
 }
