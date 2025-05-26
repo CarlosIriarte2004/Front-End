@@ -1,30 +1,25 @@
 import { Routes } from '@angular/router';
 
-
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HospitalLoginComponent } from './hospital-login/hospital-login.component';
 import { ShiftRecordComponent } from './shift-record/shift-record.component';
-import { WelcomeComponent } from './welcome/welcome.component'; 
+import { WelcomeComponent } from './welcome/welcome.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { RegistroPacienteComponent } from './registro-paciente/registro-paciente.component';
 import { PaginaMedicoComponent } from './pagina-medico/pagina-medico.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PaginaHospitalComponent } from './pagina-hospital/pagina-hospital.component';
-
-
+import { NuevoTurnoComponent } from './nuevo-turno/nuevo-turno.component';
 
 export const routes: Routes = [
-
-  { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
+  { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
 
   {
-    path: 'bienvenida', 
+    path: 'bienvenida',
     component: WelcomeComponent
   },
-
-
   {
     path: 'login-doctor',
     component: LoginDoctorComponent
@@ -41,9 +36,9 @@ export const routes: Routes = [
     path: 'login-hospital',
     component: HospitalLoginComponent
   },
-  { 
-    path: 'pagina-hospital', 
-    component: PaginaHospitalComponent 
+  {
+    path: 'pagina-hospital',
+    component: PaginaHospitalComponent
   },
   {
     path: 'registro-paciente',
@@ -53,36 +48,20 @@ export const routes: Routes = [
     path: 'registro-turno',
     component: ShiftRecordComponent
   },
-
   {
-    path: 'pagina-medico', 
+    path: 'pagina-medico',
     component: PaginaMedicoComponent
   },
-
   {
-    path: 'pagina-admin', 
+    path: 'nuevo-turno', 
+    component: NuevoTurnoComponent
+  },
+  {
+    path: 'pagina-admin',
     component: AdminPageComponent
   },
-
   {
     path: 'perfil-paciente',
     component: PatientProfileComponent
-  },
-
-  {
-    path: '', 
-    redirectTo: '/bienvenida', 
-    pathMatch: 'full' 
-  },
-  {
-    path: 'login-doctor', 
-    component: LoginDoctorComponent 
-  },
-   {
-    path: 'login-paciente', 
-    component: PatientLoginComponent
-  },
-  { path: 'registro-paciente', 
-    component: RegistroPacienteComponent 
   },
 ];

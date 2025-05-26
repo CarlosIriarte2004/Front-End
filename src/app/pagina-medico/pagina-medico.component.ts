@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./pagina-medico.component.css']
 })
 export class PaginaMedicoComponent {
-  // Datos de ejemplo para los turnos registrados
   turnosRegistrados = [
     {
       paciente: 'Pedro Pascal Ríos',
@@ -47,17 +46,17 @@ export class PaginaMedicoComponent {
   constructor(private router: Router) {} 
 
 
-  goToLoginPage(): void {
-    
-    this.router.navigate(['/login-doctor']);
-    console.log('Navegando a la página de login del doctor...');
-    
+ goToNuevoTurno(): void {
+    this.router.navigate(['/nuevo-turno']); 
+    console.log('Navegando a la página de nuevo turno...');
   }
 
- 
-    verEnCalendario(turno: any): void {
+  goToLoginPage(): void {
+    this.router.navigate(['/login-doctor']);
+    console.log('Navegando a la página de login del doctor...');
+  }
+
+  verEnCalendario(turno: any): void {
     console.log('Ver en calendario:', turno);
-    // implementar la lógica para mostrar el turno en un calendario
-    // o navegar a una vista de calendario específica.
   }
 }
