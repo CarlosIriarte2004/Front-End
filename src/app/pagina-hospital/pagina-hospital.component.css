@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --header-background: #00334d; 
+  --nav-background: #004d66;
+  --body-background: #ffffff; 
+  --main-content-background: #b2f9ff; 
+
+  --text-dark: #333333; 
+  --text-light: #ffffff; 
+
+  --card-background: #0995a8;
+  --card-header-background: #334bb7; 
+  --border-color: #ddd;
+
+  /* Colores para botones de navegación específicos (Calendario, Médicos, Penalizados) */
+  --nav-button-background: #225534; 
+  --nav-button-color: #333333;
+  --nav-button-border: #cccccc; 
+  --nav-button-hover-background: #f0f0f0; 
+
+  /* Colores para botones "Ver en calendario" */
+  --view-calendar-button-background: #204723; 
+  --view-calendar-button-color: #333333;
+  --view-calendar-button-hover: #cccccc; 
+
+  --box-shadow-header: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --box-shadow-nav: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --box-shadow-main-content: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-card: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --box-shadow-button: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales del contenedor principal (ocupa todo el ancho y muestra el fondo) */
+.hospital-container {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--body-background); 
+  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%; 
+}
+
+/* Contenedor que limita el ancho del contenido y lo centra */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1800px; 
+  margin: 0 auto; 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); 
+  background-color: #0f4a71; 
+  border-radius: 8px; 
+  overflow: hidden;
+}
+
+/* Estilos del encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--header-background); 
+  padding: 15px 30px;
+  box-shadow: var(--box-shadow-header);
+  color: var(--text-light);
+  border-radius: 5px 5px 0 0; 
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Estilos para el logo "Los Olivos" */
+.hospital-logo {
+  width: 50px; 
+  height: 50px;
+  border-radius: 5px; 
+  object-fit: contain; 
+  background-color: #FFFFFF;
+  padding: 5px; 
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.emergency-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+.emergency-icon {
+  font-size: 20px;
+  color: var(--text-light);
+}
+
+.phone-number {
+  font-weight: bold;
+}
+
+.emergency-text {
+  font-weight: normal;
+}
+
+/* Estilos de la barra de navegación */
+.main-nav {
+  width: 100%;
+  background-color: var(--nav-background); 
+  padding: 10px 0;
+  box-shadow: var(--box-shadow-nav);
+  border-radius: 0 0 5px 5px; 
+  margin-bottom: 20px; 
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.main-nav li {
+  padding: 5px 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Estilos para los enlaces de texto de navegación (Sobre Nosotros, Contacto) */
+.main-nav .nav-text-link {
+  color: var(--text-light);
+}
+
+.main-nav .nav-text-link:hover {
+  color: #a0c4ff; 
+}
+
+/* Estilos para los elementos de navegación que parecen botones (Calendario, Médicos, Penalizados) */
+.main-nav .nav-button {
+  background-color: #5d81f7; 
+  color: var(--nav-button-color); 
+  padding: 8px 15px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow-button);
+  border: 1px solid var(--nav-button-border); 
+}
+
+.main-nav .nav-button:hover {
+  background-color: var(--nav-button-hover-background); 
+}
+
+.main-nav .nav-button .icon {
+  font-size: 18px;
+}
+
+/* Contenido principal */
+.main-content {
+  width: 100%;
+  background-color: var(--nav-button-background);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-main-content);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.inbox-title {
+  font-size: 28px;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.appointments-grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: start;
+}
+
+.appointment-card {
+  background-color: var(--card-background); 
+  color: var(--text-dark);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-header-background); 
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-header .icon-info {
+  font-size: 18px;
+  margin-right: 5px;
+  color: #007bff; 
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #0008ff;
+}
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.card-body p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.card-body strong {
+  color: var(--text-dark);
+}
+
+.card-footer {
+  padding: 15px;
+  background-color: #5d81f7;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.view-calendar-button {
+  background-color: var(--view-calendar-button-background);
+  color: var(--view-calendar-button-color);
+  border: 1px solid var(--view-calendar-button-background);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: var(--box-shadow-button);
+}
+
+.view-calendar-button:hover {
+  background-color: var(--view-calendar-button-hover);
+  transform: translateY(-2px);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 10px; 
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav li {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .appointments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-wrapper {
+    padding: 5px;
+  }
+
+  .header, .main-nav, .main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .inbox-title {
+    font-size: 24px;
+  }
+}

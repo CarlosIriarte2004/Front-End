@@ -1,0 +1,60 @@
+<div class="hospital-container">
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="header-left">
+        <div class="hospital-logo-container">
+          <img src="/app/assets/los-olivos.png" alt="Logo Los Olivos" class="hospital-logo">
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="emergency-info">
+          <span class="emergency-icon">📞</span>
+          <span class="emergency-text">EMERGENCY</span>
+          <span class="phone-number">(237) 681-812-255</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <div class="main-nav-left">
+        <ul>
+          <li><a href="#" class="nav-text-link">Sobre Nosotros</a></li>
+          <li><a href="#" class="nav-text-link">Contacto de servicio técnico</a></li>
+        </ul>
+      </div>
+      <div class="main-nav-right">
+        <ul>
+          <li><a href="#" class="nav-button"><span class="icon">📅</span>Calendario</a></li>
+          <li><a href="#" class="nav-button"><span class="icon">📄</span>Lista de médicos</a></li>
+          <li><a href="#" class="nav-button"><span class="icon">🚫</span>Lista de penalizados</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main-content-wrapper">
+      <main class="main-content">
+        <h2 class="inbox-title">Bandeja de entrada</h2>
+
+        <div class="appointments-grid">
+          <div *ngFor="let cita of citas" class="appointment-card">
+            <div class="card-header">
+              <span class="icon-info">ⓘ</span>
+              <span class="card-title">Cancelo cita</span> <button class="close-button" (click)="cancelarCita(cita.id)">✕</button>
+            </div>
+            <div class="card-body">
+              <p><strong>Doctor:</strong> {{ cita.doctor }}</p>
+              <p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+              <p><strong>Hora:</strong> {{ cita.hora }}</p>
+            </div>
+            <div class="card-footer">
+              <button class="view-calendar-button" (click)="verEnCalendario(cita)">
+                Ver en calendario
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </div>
+</div>
