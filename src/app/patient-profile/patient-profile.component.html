@@ -1,0 +1,115 @@
+<div class="profile-page-container">
+  <h1 class="page-title">Perfil paciente - Historial medico</h1>
+
+  <div class="patient-info-card" *ngIf="paciente as p">
+    <div class="profile-picture-section">
+      <img [src]="p.fotoUrl" alt="Foto de {{ p.nombreCompleto }}" class="profile-picture">
+    </div>
+    <div class="patient-details-section">
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.nombre }}</span>
+          <span class="detail-label">Nombre completo:</span>
+          <span class="detail-value">{{ p.nombreCompleto }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.fechaNacimiento }}</span>
+          <span class="detail-label">Fecha de nacimiento:</span>
+          <span class="detail-value">{{ p.fechaNacimiento }}</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.cedula }}</span>
+          <span class="detail-label">Cedula de identidad:</span>
+          <span class="detail-value">{{ p.cedulaIdentidad }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.sexo }}</span>
+          <span class="detail-label">Sexo:</span>
+          <span class="detail-value">{{ p.sexo }}</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.sangre }}</span>
+          <span class="detail-label">Tipo de sangre:</span>
+          <span class="detail-value">{{ p.tipoSangre }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.estadoCivil }}</span>
+          <span class="detail-label">Estado civil:</span>
+          <span class="detail-value">{{ p.estadoCivil }}</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.nacionalidad }}</span>
+          <span class="detail-label">Nacionalidad:</span>
+          <span class="detail-value">{{ p.nacionalidad }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.lugarNacimiento }}</span>
+          <span class="detail-label">Lugar de nacimiento:</span>
+          <span class="detail-value">{{ p.lugarNacimiento }}</span>
+        </div>
+      </div>
+
+      <hr class="details-divider">
+
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.telefonoFijo }}</span>
+          <span class="detail-label">Telefono fijo:</span>
+          <span class="detail-value">{{ p.telefonoFijo || 'N/A' }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.direccion }}</span>
+          <span class="detail-label">Direccion:</span>
+          <span class="detail-value">{{ p.direccion }}</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.telefonoMovil }}</span>
+          <span class="detail-label">Telefono movil:</span>
+          <span class="detail-value">{{ p.telefonoMovil }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.emergencia }}</span>
+          <span class="detail-label">Numero de emergencia:</span>
+          <span class="detail-value">{{ p.numeroEmergencia }}</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.email }}</span>
+          <span class="detail-label">Correo personal:</span>
+          <span class="detail-value email-value">{{ p.correoPersonal }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">{{ icons.estado }}</span>
+          <span class="detail-label">Estado:</span>
+          <span class="detail-value status-value">{{ p.estadoPenalizacion }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="medical-history-section">
+    <div class="history-title-overlay">
+      <h2>HISTORIAL MEDICO</h2>
+    </div>
+    <div class="history-content">
+      <p *ngIf="historialMedico.length === 0">No hay entradas en el historial médico.</p>
+      <ul *ngIf="historialMedico.length > 0" class="history-list">
+        <li *ngFor="let entry of historialMedico" class="history-item">
+          <strong>Fecha:</strong> {{ entry.fecha }} <br>
+          <strong>Tipo:</strong> {{ entry.tipo }} <br>
+          <strong>Descripción:</strong> {{ entry.descripcion }} <br>
+          <span *ngIf="entry.doctor"><strong>Doctor/Lugar:</strong> {{ entry.doctor }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
