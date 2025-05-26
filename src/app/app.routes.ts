@@ -7,12 +7,9 @@ import { ShiftRecordComponent } from './shift-record/shift-record.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { LoginDoctorComponent} from './login-doctor/login-doctor.component';
+import { RegistroPacienteComponent } from './registro-paciente/registro-paciente.component';
 
 export const routes: Routes = [
-  {
-    path: 'login-paciente', 
-    component: PatientLoginComponent
-  },
 
   {
     path: 'login-admin',    
@@ -48,5 +45,16 @@ export const routes: Routes = [
     path: 'login-doctor', 
     component: LoginDoctorComponent 
   },
+   {
+    path: 'login-paciente', 
+    component: PatientLoginComponent
+  },
+  { path: 'registro-paciente', 
+    component: RegistroPacienteComponent 
+  },
+  { path: '', 
+    redirectTo: '/login', 
+    pathMatch: 'full' 
+  }, // Redirige a '/login' por defecto
 
 ];

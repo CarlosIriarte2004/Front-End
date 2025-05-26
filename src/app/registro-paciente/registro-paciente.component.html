@@ -1,0 +1,76 @@
+<div class="registration-container">
+  <div class="header">
+    <h1 class="title">REGISTRATE</h1>
+    <div class="logo">
+      <img src="/assets/images/logo-salud-total-bolivia-sin-fondo.png" alt="Salud Total Medicina Logo">
+    </div>
+  </div>
+
+  <form class="registration-form">
+    <div class="form-row">
+      <label for="nombreCompleto">Nombre completo:</label>
+      <input type="text" id="nombreCompleto" name="nombreCompleto" [(ngModel)]="paciente.nombreCompleto" required>
+    </div>
+
+    <div class="form-row">
+      <label for="cedulaIdentidad">Cedula de identidad:</label>
+      <input type="text" id="cedulaIdentidad" name="cedulaIdentidad" [(ngModel)]="paciente.cedulaIdentidad" required>
+    </div>
+
+    <div class="form-row two-columns">
+      <div class="input-group">
+        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="paciente.fechaNacimiento">
+      </div>
+      <div class="input-group">
+        <label for="genero">Genero:</label>
+        <input type="text" id="genero" name="genero" [(ngModel)]="paciente.genero">
+      </div>
+    </div>
+
+    <div class="form-row two-columns">
+      <div class="input-group">
+        <label for="tipoSangre">Tipo de sangre:</label>
+        <input type="text" id="tipoSangre" name="tipoSangre" [(ngModel)]="paciente.tipoSangre">
+      </div>
+      <div class="input-group">
+        <label for="estadoCivil">Estado civil:</label>
+        <input type="text" id="estadoCivil" name="estadoCivil" [(ngModel)]="paciente.estadoCivil">
+      </div>
+    </div>
+
+    <div class="form-row two-columns">
+      <div class="input-group">
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" name="nacionalidad" [(ngModel)]="paciente.nacionalidad">
+      </div>
+      <div class="input-group">
+        <label for="lugarNacimiento">Lugar de nacimiento:</label>
+        <input type="text" id="lugarNacimiento" name="lugarNacimiento" [(ngModel)]="paciente.lugarNacimiento">
+      </div>
+    </div>
+
+    <div class="form-row full-width-input">
+      <label for="direccion">Direccion:</label>
+      <input type="text" id="direccion" name="direccion" [(ngModel)]="paciente.direccion">
+    </div>
+
+    <div class="form-row two-columns">
+      <div class="input-group">
+        <label for="telefonoFijo">Telefono fijo:</label>
+        <input type="text" id="telefonoFijo" name="telefonoFijo" [(ngModel)]="paciente.telefonoFijo">
+      </div>
+      <div class="input-group">
+        <label for="telefonoCelular">Telefono celular:</label>
+        <input type="text" id="telefonoCelular" name="telefonoCelular" [(ngModel)]="paciente.telefonoCelular">
+      </div>
+    </div>
+
+    <div class="form-row full-width-input">
+      <label for="correoElectronico">Correo electronico:</label>
+      <input type="email" id="correoElectronico" name="correoElectronico" [(ngModel)]="paciente.correoElectronico" required>
+    </div>
+
+    <button type="submit" (click)="crearCuenta()">Crear cuenta</button>
+  </form>
+</div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -19,7 +19,7 @@ export class PatientLoginComponent {
     password: ''
   };
 
-  constructor(private router: Router) { } 
+  constructor(private router: Router) { }
 
   onLoginSubmit(): void {
     console.log('Datos de login (Paciente):', this.loginData);
@@ -27,17 +27,22 @@ export class PatientLoginComponent {
     if (this.loginData.email && this.loginData.password) {
       console.log('Simulando login de paciente exitoso...');
       this.router.navigate(['/registro-turno']); 
-
     } else {
       alert('Por favor, ingresa email y contraseña.');
     }
   }
-
   navigateToRegistration(): void {
-    console.log("Navegar a registro - asegúrate de tener la ruta configurada");
+    console.log("Navegando a la página de registro...");
+    this.router.navigate(['/registro-paciente']);
   }
 
   onForgotPassword(): void {
     console.log('Olvidó su contraseña presionado');
+    // Aquí podrías añadir la lógica para manejar el olvido de contraseña
   }
+  /*
+  goToRegistro(): void {
+    this.router.navigate(['/registro-paciente']);
+  }
+  */
 }
