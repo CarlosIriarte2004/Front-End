@@ -65,6 +65,7 @@ export class ShiftRecordComponent implements OnInit {
 
   verPerfilUsuario(): void {
     console.log('Ir al perfil del usuario');
+    this.router.navigate(['/perfil-paciente']);
   }
 
   verCitasPendientes(): void {
