@@ -11,6 +11,10 @@ import { WelcomeComponent } from './welcome/welcome.component'; // ¡Importante!
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { RegistroPacienteComponent } from './registro-paciente/registro-paciente.component';
+import { PaginaMedicoComponent } from './pagina-medico/pagina-medico.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+
+
 
 export const routes: Routes = [
 
@@ -51,6 +55,12 @@ export const routes: Routes = [
     path: 'pagina-medico', 
     component: PaginaMedicoComponent
   },
+
+  {
+    path: 'pagina-admin', 
+    component: AdminPageComponent
+  },
+
   {
     path: 'perfil-paciente',
     component: PatientProfileComponent
@@ -72,9 +82,4 @@ export const routes: Routes = [
   { path: 'registro-paciente', 
     component: RegistroPacienteComponent 
   },
-  { path: '', 
-    redirectTo: '/login', 
-    pathMatch: 'full' 
-  }, 
-
 ];
