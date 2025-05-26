@@ -1,0 +1,150 @@
+.login-page-wrapper {
+  font-family: 'Arial', sans-serif; 
+  background-image: url('/assets/images/fondo-inicio-de-sesion-medico.jpg');  
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-header {
+  background-color: #043544;
+  color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-header .header-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.login-header .header-actions .btn-register {
+  background-color: #064c60; 
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.login-form-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-form-container .login-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.login-form-container .login-title {
+  font-size: 1.5em;
+  color: #333333;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.login-form-container .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.login-form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.login-form-container .form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.login-form-container .form-group .form-control:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(128, 189, 255, 0.25); 
+}
+
+.login-form-container .error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.login-form-container .btn-sign-in {
+  background-color: #343a40;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.login-form-container .btn-sign-in:hover {
+  background-color: #23272b; 
+}
+
+.login-form-container .btn-sign-in:disabled {
+  background-color: #5a6268; 
+  cursor: not-allowed;
+}
+
+.login-form-container .forgot-password-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.login-form-container .forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-header {
+    padding: 10px 15px;
+    flex-direction: column;
+  }
+  .login-header .header-title {
+    font-size: 1em;
+    margin-bottom:10px; 
+  }
+  .login-form-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+}
