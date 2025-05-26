@@ -1,0 +1,63 @@
+<div class="admin-page-container">
+
+  <nav class="navigation-bar">
+    <div class="logo-in-nav-bar">
+      <img src="/assets/logo-salud-total-transparente.png" alt="Logo Salud Total Bolivia" class="logo-image-nav">
+      </div>
+
+    <div class="nav-tabs">
+      <button
+        class="nav-tab"
+        [class.active]="activeTab === 'hospitales'"
+        (click)="selectTab('hospitales')">
+        Lista de hospitales y clinicas
+      </button>
+      <button
+        class="nav-tab"
+        [class.active]="activeTab === 'auditoria'"
+        (click)="selectTab('auditoria')">
+        Auditoria
+      </button>
+    </div>
+
+    <button class="calendar-button" (click)="navigateToCalendar()">
+      Calendario
+    </button>
+  </nav>
+
+  <main class="main-content">
+    <section class="statistics-search-section">
+      <h2>BUSCADOR DE ESTADISTICAS</h2>
+      <div class="search-input-container">
+        <input
+          type="text"
+          placeholder="Palabra clave"
+          [(ngModel)]="searchTerm"
+          (keyup.enter)="searchStatistics()" />
+        <button class="search-icon-button" (click)="searchStatistics()">
+          {{ iconSearch }}
+        </button>
+      </div>
+      <div class="statistics-results-placeholder">
+        <p>Área de resultados de estadísticas</p>
+      </div>
+    </section>
+
+    <section class="inbox-section">
+      <h2>BANDEJA DE ENTRADA</h2>
+      <div class="inbox-items-container">
+        <div class="inbox-item" *ngFor="let item of inboxItems">
+          <span class="item-icon">{{ item.icon }}</span>
+          <div class="item-details">
+            <p class="item-title">{{ item.title }}</p>
+            <p class="item-meta">Fecha: {{ item.date }}</p>
+            <p class="item-meta">Hora: {{ item.time }}</p>
+          </div>
+        </div>
+        <p *ngIf="inboxItems.length === 0" class="empty-inbox-message">
+          Bandeja de entrada vacía.
+        </p>
+      </div>
+    </section>
+  </main>
+</div>
