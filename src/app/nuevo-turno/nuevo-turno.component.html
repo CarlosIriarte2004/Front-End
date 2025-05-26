@@ -1,0 +1,47 @@
+<div class="main-container">
+  <div class="header-section">
+    <h1 class="header-title">Registra el nuevo turno</h1>
+    <div class="company-info">
+      <div class="logo">
+      <img src="/assets/images/logo-salud-total-bolivia-sin-fondo.png" alt="Logo Salud Total Bolivia" class="company-logo">
+    </div>
+      <div class="company-text">
+        <p class="company-name">SALUD TOTAL</p>
+        <p class="company-country">BOLIVIA</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="registrarTurno()">
+      <div class="form-group">
+        <label for="nombrePaciente">Nombre de paciente:</label>
+        <input type="text" id="nombrePaciente" [(ngModel)]="nombrePaciente" name="nombrePaciente" required>
+      </div>
+
+      <div class="form-group">
+        <label for="especialidad">Especialidad:</label>
+        <input type="text" id="especialidad" [(ngModel)]="especialidad" name="especialidad" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nombreMedico">Nombre del medico:</label>
+        <input type="text" id="nombreMedico" [(ngModel)]="nombreMedico" name="nombreMedico" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" [(ngModel)]="fecha" name="fecha" required>
+      </div>
+
+      <div class="form-group">
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" [(ngModel)]="hora" name="hora" required>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" class="register-button">Registrar turno</button>
+      </div>
+    </form>
+  </div>
+</div>
