@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common'; 
-import { FormsModule } from '@angular/forms';   
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-doctor',
-  standalone: true, 
+  standalone: true,
   imports: [
-    CommonModule,     
-    FormsModule,      
+    CommonModule,
+    FormsModule,
   ],
   templateUrl: './login-doctor.component.html',
-  styleUrls: ['./login-doctor.component.css'] 
+  styleUrls: ['./login-doctor.component.css']
 })
 export class LoginDoctorComponent {
   loginData = {
@@ -25,6 +25,7 @@ export class LoginDoctorComponent {
     console.log('Datos de login:', this.loginData);
     if (this.loginData.email && this.loginData.password) {
       alert('Inicio de sesión simulado exitoso!');
+      this.router.navigate(['/pagina-medico']);
     } else {
       alert('Por favor, ingresa email y contraseña.');
     }
