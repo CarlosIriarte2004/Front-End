@@ -6,9 +6,10 @@ html, body {
 }
 
 body {
-  background-image: url('assets/fondo-salud-total.jpeg');
+  /*background-image: url('assets/fondo-salud-total.jpeg');*/
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: contain;
+  background-color: #ffffff;
 }
