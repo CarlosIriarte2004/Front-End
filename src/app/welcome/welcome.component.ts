@@ -1,11 +1,34 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; 
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-welcome',
-  imports: [],
+  standalone: true, 
+  imports: [
+    CommonModule    
+
+  ],
   templateUrl: './welcome.component.html',
-  styleUrl: './welcome.component.css'
+  styleUrls: ['./welcome.component.css'] 
 })
 export class WelcomeComponent {
 
+  constructor(private router: Router) {}  
+
+  navegarLoginPaciente(): void {
+    this.router.navigate(['/login-paciente']);
+  }
+
+  navegarLoginMedico(): void {
+    this.router.navigate(['/login-medico']); 
+  }
+
+  navegarLoginAdmin(): void {
+    this.router.navigate(['/login-admin']); 
+  }
+
+  navegarLoginHospital(): void {
+    this.router.navigate(['/login-hospital']);
+  }
 }
