@@ -12,10 +12,11 @@ import { PaginaMedicoComponent } from './pagina-medico/pagina-medico.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PaginaHospitalComponent } from './pagina-hospital/pagina-hospital.component';
 import { NuevoTurnoComponent } from './nuevo-turno/nuevo-turno.component';
+import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.component';
+import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component'; // 👈 IMPORTACIÓN NUEVA
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
-
+  { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
   {
     path: 'bienvenida',
     component: WelcomeComponent
@@ -53,7 +54,7 @@ export const routes: Routes = [
     component: PaginaMedicoComponent
   },
   {
-    path: 'nuevo-turno', 
+    path: 'nuevo-turno',
     component: NuevoTurnoComponent
   },
   {
@@ -64,4 +65,12 @@ export const routes: Routes = [
     path: 'perfil-paciente',
     component: PatientProfileComponent
   },
+  {
+    path: 'inicio-consulta',
+    component: InicioConsultaComponent
+  },
+  {
+    path: 'pacientes-penalizados',
+    component: PacientesPenalizadosComponent
+  }
 ];

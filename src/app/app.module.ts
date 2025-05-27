@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { routes } from './app.routes'; 
-
+import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 
 @NgModule({
   declarations: [
+    // otros componentes...
+    PacientesPenalizadosComponent
   ],
   imports: [
-    BrowserModule, 
-    RouterModule.forRoot(routes)
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    FormsModule // si vas a usar formularios
   ],
-  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
+
