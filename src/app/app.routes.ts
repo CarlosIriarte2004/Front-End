@@ -12,6 +12,7 @@ import { PaginaMedicoComponent } from './pagina-medico/pagina-medico.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PaginaHospitalComponent } from './pagina-hospital/pagina-hospital.component';
 import { NuevoTurnoComponent } from './nuevo-turno/nuevo-turno.component';
+import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
@@ -63,5 +64,9 @@ export const routes: Routes = [
   {
     path: 'perfil-paciente',
     component: PatientProfileComponent
+  },
+  {
+    path: 'inicio-consulta',
+    component: InicioConsultaComponent
   },
 ];
