@@ -56,6 +56,11 @@ export class PaginaMedicoComponent {
     console.log('Navegando a la página de login del doctor...');
   }
 
+  goToInicioConsulta(): void {
+    this.router.navigate(['/inicio-consulta']);
+    console.log('Navegando a la página de inicio de consulta...');
+  }
+  
   verEnCalendario(turno: any): void {
     console.log('Ver en calendario:', turno);
   }
