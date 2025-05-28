@@ -14,6 +14,7 @@ import { PaginaHospitalComponent } from './pagina-hospital/pagina-hospital.compo
 import { NuevoTurnoComponent } from './nuevo-turno/nuevo-turno.component';
 import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.component';
 import { CalendarDoctorComponent } from './calendar-doctor/calendar-doctor.component';
+import { CalendarAdminComponent } from './calendar-admin/calendar-admin.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
@@ -73,5 +74,9 @@ export const routes: Routes = [
   {
     path: 'calendario-doctor',
     component: CalendarDoctorComponent
+  },
+   {
+    path: 'calendario-admin',
+    component: CalendarAdminComponent
   },
 ];

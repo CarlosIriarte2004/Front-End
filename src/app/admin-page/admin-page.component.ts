@@ -71,8 +71,9 @@ export class AdminPageComponent implements OnInit {
     }
   }
 
-  navigateToCalendar(): void {
-    console.log('Navegando al calendario...');
+  goToCalendario(): void {
+    this.router.navigate(['/calendario-admin']);
+    console.log('Navegando a la página de calendario...');
   }
 
   viewSystemLogs(): void {
