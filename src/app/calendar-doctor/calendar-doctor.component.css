@@ -1,0 +1,197 @@
+/* Estilos generales del componente - Tema Claro */
+:host {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa; /* Fondo general muy claro, casi blanco */
+  color: #212529; /* Texto oscuro principal */
+  padding: 16px;
+}
+
+.notion-calendar-wrapper { /* Mantendremos el nombre de la clase para no cambiar HTML */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff; /* Fondo blanco para el contenido del calendario */
+  border: 1px solid #dee2e6; /* Borde sutil alrededor */
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+/* Cabecera del Calendario */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: #00796b; /* Un verde azulado (teal) para la cabecera, como en el boceto original */
+  color: #ffffff; /* Texto blanco en la cabecera */
+  border-bottom: 1px solid #00695c; /* Borde inferior más oscuro para profundidad */
+  border-radius: 6px 6px 0 0; /* Redondear esquinas superiores */
+}
+
+.month-year-display {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+.header-controls .nav-button,
+.header-controls .today-button {
+  background: none;
+  border: 1px solid transparent;
+  color: #e0f2f1; /* Color claro para iconos/texto de botones en cabecera */
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 6px;
+  margin-left: 4px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header-controls .nav-button:hover,
+.header-controls .today-button:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo sutil al pasar el mouse */
+  color: #ffffff;
+}
+
+.header-controls .today-button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* "Hoy" ligeramente resaltado */
+}
+.header-controls .today-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Días de la semana (Dom, Lun, Mar...) */
+.week-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: left;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #dee2e6; /* Línea divisoria */
+  margin: 0 16px 8px 16px; /* Ajustar al padding del contenido */
+}
+
+.week-day-name {
+  padding: 8px 4px 8px 8px;
+  font-size: 12px;
+  color: #00695c; /* Texto de días de semana en un tono verde/azul */
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Cuadrícula de Días */
+.calendar-grid-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(120px, auto); /* Altura de celdas */
+  border-top: 1px solid #dee2e6; /* Borde superior de la cuadrícula interna */
+  margin: 0 16px 16px 16px; /* Ajustar al padding */
+}
+
+.day-cell-container {
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding: 6px 8px;
+  position: relative;
+  overflow-y: auto;
+  transition: background-color 0.2s ease;
+}
+.day-cell-container:nth-child(7n + 1) { /* Borde izquierdo para la primera columna */
+    border-left: 1px solid #dee2e6;
+}
+
+
+/* Estilo para fines de semana (opcional, basado en boceto original) */
+.day-cell-container.current-month-weekend {
+  background-color: #e0f2f1; /* Un verde azulado muy pálido para fines de semana */
+}
+
+.day-cell-container.other-month {
+  background-color: #f8f9fa; /* Fondo ligeramente diferente para días de otros meses */
+}
+.day-cell-container.other-month .day-cell-header .day-number {
+  color: #adb5bd; /* Días de otros meses más tenues */
+}
+.day-cell-container.other-month .add-event-button {
+  display: none;
+}
+
+.day-cell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.day-cell-header .day-number {
+  font-size: 13px;
+  font-weight: 500;
+  color: #495057; /* Color de los números de día */
+}
+
+/* Resaltado para el día de HOY */
+.day-cell-container.is-today .day-cell-header .day-number {
+  background-color: #17a2b8; /* Azul cian brillante para HOY */
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px; /* Más redondeado */
+  font-weight: 600;
+}
+
+/* Resaltado para día SELECCIONADO */
+.day-cell-container.is-selected:not(.is-today) {
+  background-color: #cfe2ff; /* Un azul claro para el día seleccionado */
+  box-shadow: inset 0 0 0 2px #007bff; /* Borde interno azul */
+}
+.day-cell-container.is-selected.is-today .day-cell-header .day-number {
+    /* Asegurar que el estilo de "hoy" no se pierda si está seleccionado */
+    background-color: #0056b3; /* Un azul más oscuro si hoy está seleccionado */
+}
+
+
+/* Botón "+" para añadir evento */
+.add-event-button {
+  background: none;
+  border: none;
+  color: #6c757d; /* Gris sutil */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 4px;
+  cursor: pointer;
+  border-radius: 3px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.day-cell-container:hover .add-event-button {
+  opacity: 1;
+}
+.add-event-button:hover {
+  color: #007bff; /* Azul al hacer hover */
+}
+
+/* Contenido de la celda (para futuros eventos) */
+.day-cell-content {
+  min-height: 60px;
+}
+
+/* Ejemplo de estilo para tarjetas de evento */
+.event-card {
+  background-color: #e9ecef; /* Fondo claro para tarjetas de evento */
+  padding: 4px 6px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #212529; /* Texto oscuro */
+  border-left: 3px solid #007bff; /* Indicador de color a la izquierda */
+}

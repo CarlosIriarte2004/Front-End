@@ -13,6 +13,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PaginaHospitalComponent } from './pagina-hospital/pagina-hospital.component';
 import { NuevoTurnoComponent } from './nuevo-turno/nuevo-turno.component';
 import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.component';
+import { CalendarDoctorComponent } from './calendar-doctor/calendar-doctor.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
@@ -68,5 +69,9 @@ export const routes: Routes = [
   {
     path: 'inicio-consulta',
     component: InicioConsultaComponent
+  },
+  {
+    path: 'calendario-doctor',
+    component: CalendarDoctorComponent
   },
 ];
