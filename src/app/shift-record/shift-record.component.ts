@@ -60,7 +60,6 @@ export class ShiftRecordComponent implements OnInit {
 
   verMedicosPorEspecialidad(especialidadId: string): void {
     console.log('Ver médicos para la especialidad:', especialidadId);
-    alert('Navegación a médicos de ' + especialidadId + ' (aún no implementada)');
   }
 
   verPerfilUsuario(): void {
@@ -70,6 +69,7 @@ export class ShiftRecordComponent implements OnInit {
 
   verCitasPendientes(): void {
     console.log('Ver citas pendientes');
+    this.router.navigate(['/turnos-pendientes']);
   }
 
   verNotificaciones(): void {
