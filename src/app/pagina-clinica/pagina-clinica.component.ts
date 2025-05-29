@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface Cita {
   id: number;
@@ -45,10 +46,15 @@ export class PaginaClinicaComponent {
     }
   ];
 
-  constructor() { }
+ constructor(private router: Router) { }
 
   ngOnInit(): void {
     console.log('PaginaClinicaComponent inicializado');
+  }
+
+  goToCalendario(): void {
+    this.router.navigate(['/calendario-clinica']);
+    console.log('Navegando a la página de calendario...');
   }
 
   verEnCalendario(cita: Cita): void {

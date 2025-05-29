@@ -1,0 +1,36 @@
+<div class="notion-calendar-wrapper">
+  <div class="calendar-header">
+    <span class="month-year-display">{{ currentMonthDisplay }}</span>
+    <div class="header-controls">
+      <button class="nav-button" (click)="previousYear()" title="Año anterior">&laquo;</button>
+      <button class="nav-button" (click)="previousMonth()" title="Mes anterior">&#x2039;</button>
+      <button class="today-button" (click)="goToToday()">Hoy</button>
+      <button class="nav-button" (click)="nextMonth()" title="Mes siguiente">&#x203A;</button>
+      <button class="nav-button" (click)="nextYear()" title="Año siguiente">&raquo;</button>
+    </div>
+  </div>
+
+  <div class="week-days-header">
+    <div *ngFor="let dayName of weekDays" class="week-day-name">{{ dayName }}</div>
+  </div>
+
+  <div class="calendar-grid-body">
+    <div *ngFor="let dayObj of allDaysInGrid"
+        class="day-cell-container"
+        [class.is-today]="dayObj.isToday && dayObj.monthType === 'current'"
+        [class.is-selected]="dayObj.isSelected"
+        [class.other-month]="dayObj.monthType !== 'current'"
+        [class.current-month-weekend]="dayObj.isWeekend && dayObj.monthType === 'current'" (click)="selectDay(dayObj)">
+      <div class="day-cell-header">
+        <span class="day-number">{{ dayObj.day }}</span>
+        <button
+          *ngIf="dayObj.monthType === 'current'"
+          class="add-event-button"
+          title="Añadir evento"
+          (click)="onAddReminderClick(dayObj, $event)">+</button>
+      </div>
+      <div class="day-cell-content">
+      </div>
+    </div>
+  </div>
+</div>
