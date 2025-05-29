@@ -1,0 +1,51 @@
+.contenedor {
+  background-color: #4692ad;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.encabezado {
+  background-color: #1d4a5a;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.logo {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.tabla-container {
+  margin-top: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #1d4a5a;
+  color: white;
+}
