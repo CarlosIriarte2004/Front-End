@@ -15,6 +15,7 @@ import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.compo
 import { CalendarDoctorComponent } from './calendar-doctor/calendar-doctor.component';
 import { CalendarAdminComponent } from './calendar-admin/calendar-admin.component';
 import { PaginaClinicaComponent } from './pagina-clinica/pagina-clinica.component';
+import { PendingShiftsComponent } from './pending-shifts/pending-shifts.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
@@ -78,5 +79,9 @@ export const routes: Routes = [
    {
     path: 'calendario-admin',
     component: CalendarAdminComponent
+  },
+  { 
+    path: 'turnos-pendientes', 
+    component: PendingShiftsComponent 
   },
 ];

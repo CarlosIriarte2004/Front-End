@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5; /* Fondo suave general */
+  min-height: 100vh;
+}
+
+.pending-shifts-container { /* Similar a medico-page-container */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* --- Header y Nav (similar a pagina-medico) --- */
+.header {
+  background-color: #2c3e50; /* Azul oscuro */
+  color: #ecf0f1; /* Texto claro */
+  padding: 0.8rem 2rem; /* Ajustado un poco el padding vertical */
+  border-bottom: 5px solid #3498db; /* Línea azul */
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 1rem; Eliminado, la nav va dentro del header */
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 45px; /* Tamaño del logo */
+  height: 45px;
+  margin-right: 10px;
+  /* background-color: #ffffff;  Si el logo necesita fondo */
+  /* border: 2px solid #3498db; */
+  object-fit: contain;
+}
+
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+.user-welcome span {
+  font-size: 0.95rem;
+  color: #ecf0f1;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0.5rem 0 0 0; /* Espacio arriba si la nav está bajo el header-top */
+  margin: 0;
+  display: flex;
+  justify-content: flex-start; /* Alinea links a la izquierda */
+  gap: 15px; /* Espacio entre links */
+  /* background-color: #34495e; La nav ahora es parte del header oscuro */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.main-nav li {
+  /* flex-grow: 1; No es necesario si no queremos que ocupen todo el espacio */
+  text-align: left;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1rem; /* Padding para los links */
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500; /* Un poco menos bold */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-link:hover, .nav-link:focus {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* --- Contenido Principal --- */
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.page-section-title { /* Clase para títulos de sección como "Próximos Turnos" */
+  font-size: 1.8rem; /* Ajustado */
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 10px;
+}
+
+.shifts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Tarjetas un poco más anchas */
+  gap: 1.5rem;
+}
+
+.shift-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left-width: 5px; /* Borde izquierdo para el estado */
+  border-left-color: #6c757d; /* Gris por defecto para el borde de estado */
+  border-radius: 8px; /* Ajustado */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos de Tarjeta por Estado (para hacerlo "interesante") --- */
+.shift-card.status-confirmado { border-left-color: #28a745; } /* Verde */
+.shift-card.status-por-confirmar { border-left-color: #ffc107; } /* Amarillo */
+.shift-card.status-reprogramar { border-left-color: #fd7e14; } /* Naranja */
+.shift-card.status-cancelado { 
+  border-left-color: #dc3545; /* Rojo */
+  opacity: 0.7; /* Un poco transparente si está cancelado */
+}
+
+
+.card-header {
+  background-color: #f8f9fa; /* Fondo claro para el header de la tarjeta */
+  color: #343a40; /* Texto oscuro */
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.05rem; /* Ligeramente más pequeño */
+}
+
+.shift-status {
+  font-size: 0.85em;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Colores específicos para el texto del estado dentro del header */
+.status-confirmado .shift-status { background-color: #28a745; }
+.status-por-confirmar .shift-status { background-color: #ffc107; color: #333; } /* Texto oscuro para amarillo */
+.status-reprogramar .shift-status { background-color: #fd7e14; }
+.status-cancelado .shift-status { background-color: #dc3545; }
+
+
+.card-body {
+  padding: 1rem;
+  color: #333333;
+  flex-grow: 1;
+}
+
+.card-body p {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.card-body strong {
+  color: #2c3e50;
+  margin-right: 5px;
+}
+
+.card-footer {
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa; /* Fondo claro */
+  text-align: right; /* Alinea botones a la derecha */
+  border-top: 1px solid #e0e0e0;
+}
+.card-footer-message {
+  padding: 1rem;
+  text-align: center;
+  color: #dc3545;
+  font-style: italic;
+}
+
+.action-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  margin-left: 10px;
+}
+
+.details-button {
+  background-color: #007bff; /* Azul */
+  color: white;
+}
+.details-button:hover { background-color: #0056b3; }
+
+.cancel-button {
+  background-color: #dc3545; /* Rojo */
+  color: white;
+}
+.cancel-button:hover { background-color: #c82333; }
+
+.no-items-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- Media Queries (simplificadas, ajusta según sea necesario) --- */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .user-welcome {
+    margin-top: 0.5rem;
+  }
+  .main-nav ul {
+    justify-content: center; /* Centra los links de nav en pantallas pequeñas */
+    flex-wrap: wrap; /* Permite que los links pasen a la siguiente línea */
+  }
+  .nav-link {
+    padding: 0.5rem 0.8rem;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+  .shifts-grid {
+    grid-template-columns: 1fr; /* Una columna */
+  }
+}

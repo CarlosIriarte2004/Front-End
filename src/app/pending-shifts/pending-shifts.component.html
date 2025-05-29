@@ -1,0 +1,54 @@
+<div class="pending-shifts-container"> <header class="header">
+    <div class="header-top">
+      <div class="logo-section">
+        <img src="/assets/logo-salud-total-transparente.png" alt="Logo Salud Total" class="logo-icon"> <span class="page-title">Mis Turnos Pendientes</span>
+      </div>
+      <div class="user-welcome"> <span>Hola, {{ nombrePaciente }}</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a (click)="navegarA('/registro-turno')" class="nav-link">📅 Agendar Nuevo Turno</a></li>
+        <li><a (click)="navegarA('/historial-medico')" class="nav-link">📋 Mi Historial Médico</a></li>
+        <li><a (click)="navegarA('/mi-perfil')" class="nav-link">👤 Mi Perfil</a></li>
+        <li><a (click)="navegarA('/logout')" class="nav-link">🚪 Cerrar Sesión</a></li> </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2 class="page-section-title">Próximos Turnos</h2>
+
+    <div *ngIf="turnosPendientes.length > 0; else noTurnosTemplate" class="shifts-grid">
+      <div *ngFor="let turno of turnosPendientes" 
+           class="shift-card" 
+           [ngClass]="{
+             'status-confirmado': turno.estado === 'Confirmado',
+             'status-por-confirmar': turno.estado === 'Por Confirmar',
+             'status-reprogramar': turno.estado === 'Reprogramar',
+             'status-cancelado': turno.estado === 'Cancelado'
+           }">
+        <div class="card-header">
+          <span class="card-title">{{ turno.especialidad }}</span>
+          <span class="shift-status">{{ turno.estado }}</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Doctor:</strong> {{ turno.doctor }}</p>
+          <p><strong>Fecha:</strong> {{ turno.fecha }}</p>
+          <p><strong>Hora:</strong> {{ turno.hora }}</p>
+          <p><strong>Lugar:</strong> {{ turno.lugar }}</p>
+          <p *ngIf="turno.notas"><strong>Notas:</strong> {{ turno.notas }}</p>
+        </div>
+        <div class="card-footer" *ngIf="turno.estado !== 'Cancelado'">
+          <button class="action-button details-button" (click)="verDetallesTurno(turno.id)">Ver Detalles</button>
+          <button class="action-button cancel-button" (click)="cancelarTurno(turno.id)" *ngIf="turno.estado !== 'Reprogramar'">Cancelar Turno</button>
+        </div>
+        <div class="card-footer-message" *ngIf="turno.estado === 'Cancelado'">
+          <p>Este turno ha sido cancelado.</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noTurnosTemplate>
+      <p class="no-items-message">No tienes turnos pendientes por el momento. ¡Agenda uno nuevo!</p>
+    </ng-template>
+  </main>
+</div>
