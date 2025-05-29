@@ -45,8 +45,7 @@ export class PaginaMedicoComponent {
 
   constructor(private router: Router) {} 
 
-
- goToNuevoTurno(): void {
+  goToNuevoTurno(): void {
     this.router.navigate(['/nuevo-turno']); 
     console.log('Navegando a la página de nuevo turno...');
   }
@@ -60,14 +59,11 @@ export class PaginaMedicoComponent {
     this.router.navigate(['/inicio-consulta']);
     console.log('Navegando a la página de inicio de consulta...');
   }
-<<<<<<< HEAD
 
   goToCalendario(): void {
     this.router.navigate(['/calendario-doctor']);
     console.log('Navegando a la página de calendario...');
   }
-=======
->>>>>>> pacientes-penalizados
   
   verEnCalendario(turno: any): void {
     console.log('Ver en calendario:', turno);
