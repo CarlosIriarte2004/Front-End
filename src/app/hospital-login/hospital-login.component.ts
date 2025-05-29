@@ -24,8 +24,7 @@ export class HospitalLoginComponent {
   onLoginSubmit(): void {
     console.log('Datos de login:', this.loginData);
     if (this.loginData.email && this.loginData.password) {
-      alert('Inicio de sesión simulado exitoso!');
-      this.router.navigate(['/pagina-hospital']);
+      this.router.navigate(['/pagina-clinica']);
     } else {
       alert('Por favor, ingresa email y contraseña.');
     }

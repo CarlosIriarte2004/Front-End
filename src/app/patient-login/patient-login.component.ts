@@ -25,7 +25,6 @@ export class PatientLoginComponent {
     console.log('Datos de login (Paciente):', this.loginData);
 
     if (this.loginData.email && this.loginData.password) {
-      console.log('Simulando login de paciente exitoso...');
       this.router.navigate(['/registro-turno']); 
     } else {
       alert('Por favor, ingresa email y contraseña.');

@@ -1,0 +1,75 @@
+<div class="pagina-clinica-container">
+  <header class="clinica-header">
+    <div class="header-top">
+      <div class="logo-container">
+        <img src="assets/images/los-olivos.png" alt="Logo Los Olivos" class="logo">
+      </div>
+      <div class="emergency-contact">
+        <span class="emergency-icon">📞</span> <div>
+          <p class="emergency-title">EMERGENCY</p>
+          <p class="emergency-number">(237) 681-812-255</p>
+        </div>
+      </div>
+    </div>
+    <nav class="clinica-nav">
+      <ul>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto de servicio técnico</a></li>
+        <li><button class="nav-button"><span class="icon">📅</span> Calendario</button></li>
+        <li><button class="nav-button"><span class="icon">👨‍⚕️</span> Lista de médicos</button></li>
+        <li><button class="nav-button"><span class="icon">⚠️</span> Lista de penalizados</button></li>
+        <!-- El botón "Sign In" usualmente estaría en una página de login o en un header global ANTES de llegar aquí.
+             Si necesitas un botón de "Cerrar Sesión" aquí, sería más apropiado.
+             Para conectar con el "Sign In" de hospital-login:
+             1. hospital-login emite un evento (loginSuccess).
+             2. Un componente padre escucha este evento y muestra PaginaClinicaComponent.
+        -->
+        </ul>
+    </nav>
+  </header>
+
+  <main class="clinica-main">
+    <div class="main-content-wrapper">
+      <h1 class="main-title">Bandeja de entrada</h1>
+
+      <section class="citas-grid" *ngIf="citas.length > 0; else noCitas">
+        <article class="cita-card" *ngFor="let cita of citas">
+          <div class="cita-card-header">
+            <!-- El Figma muestra "Cancelo cita" como título de la tarjeta,
+                 y un 'x' en una de ellas, que podría ser para cancelar.
+                 Asumo que 'tipo' en la data representa ese título. -->
+            <h2>{{ cita.tipo }}</h2>
+            <button *ngIf="cita.puedeCancelar" class="cancel-icon-button" (click)="cancelarCita(cita.id)" title="Cancelar cita">
+              &times; </button>
+          </div>
+          <div class="cita-card-body">
+            <p><span class="info-label">Doctor:</span> {{ cita.doctor }}</p>
+            <p><span class="info-label">Fecha:</span> {{ cita.fecha }}</p>
+            <p><span class="info-label">Hora:</span> {{ cita.hora }}</p>
+          </div>
+          <div class="cita-card-footer">
+            <button class="action-button" (click)="verEnCalendario(cita)">
+              <span class="icon">🗓️</span> Ver en calendario
+            </button>
+            <!-- El Figma muestra "Cancelo cita" en la parte superior,
+                 y un botón "Ver en calendario". Si se necesita un botón explícito de cancelar aquí también:
+            <button *ngIf="cita.puedeCancelar" class="action-button cancel-button" (click)="cancelarCita(cita.id)">
+              Cancelar Cita
+            </button>
+            -->
+          </div>
+        </article>
+      </section>
+
+      <ng-template #noCitas>
+        <p class="no-citas-mensaje">No tienes citas programadas en tu bandeja de entrada.</p>
+      </ng-template>
+    </div>
+  </main>
+
+  <!--
+  <footer class="clinica-footer">
+    <p>&copy; 2025 Nombre de la Clínica. Todos los derechos reservados.</p>
+  </footer>
+  -->
+</div>
