@@ -10,11 +10,11 @@ import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { RegistroPacienteComponent } from './registro-paciente/registro-paciente.component';
 import { PaginaMedicoComponent } from './pagina-medico/pagina-medico.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-import { PaginaHospitalComponent } from './pagina-hospital/pagina-hospital.component';
 import { NuevoTurnoComponent } from './nuevo-turno/nuevo-turno.component';
 import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.component';
 import { CalendarDoctorComponent } from './calendar-doctor/calendar-doctor.component';
 import { CalendarAdminComponent } from './calendar-admin/calendar-admin.component';
+import { PaginaClinicaComponent } from './pagina-clinica/pagina-clinica.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
@@ -40,8 +40,8 @@ export const routes: Routes = [
     component: HospitalLoginComponent
   },
   {
-    path: 'pagina-hospital',
-    component: PaginaHospitalComponent
+    path: 'pagina-clinica',
+    component: PaginaClinicaComponent
   },
   {
     path: 'registro-paciente',
