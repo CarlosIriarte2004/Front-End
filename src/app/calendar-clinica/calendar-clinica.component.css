@@ -1,0 +1,184 @@
+:host {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 16px;
+}
+
+.notion-calendar-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: #00796b;
+  color: #ffffff;
+  border-bottom: 1px solid #00695c;
+  border-radius: 6px 6px 0 0;
+}
+
+.month-year-display {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+.header-controls .nav-button,
+.header-controls .today-button {
+  background: none;
+  border: 1px solid transparent;
+  color: #e0f2f1;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 6px;
+  margin-left: 4px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header-controls .nav-button:hover,
+.header-controls .today-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.header-controls .today-button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.header-controls .today-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.week-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: left;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #dee2e6;
+  margin: 0 16px 8px 16px;
+}
+
+.week-day-name {
+  padding: 8px 4px 8px 8px;
+  font-size: 12px;
+  color: #00695c;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.calendar-grid-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  border-top: 1px solid #dee2e6;
+  margin: 0 16px 16px 16px;
+}
+
+.day-cell-container {
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding: 6px 8px;
+  position: relative;
+  overflow-y: auto;
+  transition: background-color 0.2s ease;
+}
+.day-cell-container:nth-child(7n + 1) {
+  border-left: 1px solid #dee2e6;
+}
+
+.day-cell-container.current-month-weekend {
+  background-color: #e0f2f1;
+}
+
+.day-cell-container.other-month {
+  background-color: #f8f9fa;
+}
+.day-cell-container.other-month .day-cell-header .day-number {
+  color: #adb5bd;
+}
+.day-cell-container.other-month .add-event-button {
+  display: none;
+}
+
+.day-cell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.day-cell-header .day-number {
+  font-size: 13px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.day-cell-container.is-today .day-cell-header .day-number {
+  background-color: #17a2b8;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.day-cell-container.is-selected:not(.is-today) {
+  background-color: #cfe2ff;
+  box-shadow: inset 0 0 0 2px #007bff;
+}
+.day-cell-container.is-selected.is-today .day-cell-header .day-number {
+  background-color: #0056b3;
+}
+
+.add-event-button {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 4px;
+  cursor: pointer;
+  border-radius: 3px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.day-cell-container:hover .add-event-button {
+  opacity: 1;
+}
+.add-event-button:hover {
+  color: #007bff;
+}
+
+.day-cell-content {
+  min-height: 60px;
+}
+
+.event-card {
+  background-color: #e9ecef;
+  padding: 4px 6px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #212529;
+  border-left: 3px solid #007bff;
+}
