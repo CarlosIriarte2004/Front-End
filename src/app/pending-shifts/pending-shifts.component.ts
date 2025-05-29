@@ -1,30 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Para *ngFor, *ngIf, ngClass
-import { Router } from '@angular/router'; // Para navegación si es necesario
+import { CommonModule } from '@angular/common'; 
+import { Router } from '@angular/router'; 
 
-// Interfaz para un turno pendiente
 interface TurnoPendiente {
   id: string;
   especialidad: string;
   doctor: string;
-  fecha: string; // Podría ser Date, pero string es más simple para mock data
+  fecha: string; 
   hora: string;
   lugar: string;
-  estado: 'Confirmado' | 'Por Confirmar' | 'Cancelado' | 'Reprogramar'; // Para hacerlo más interesante visualmente
+  estado: 'Confirmado' | 'Por Confirmar' | 'Cancelado' | 'Reprogramar'; 
   notas?: string;
 }
 
 @Component({
   selector: 'app-pending-shifts',
   standalone: true,
-  imports: [CommonModule], // CommonModule es esencial para *ngFor, *ngIf, ngClass
+  imports: [CommonModule], 
   templateUrl: './pending-shifts.component.html',
   styleUrls: ['./pending-shifts.component.css']
 })
 export class PendingShiftsComponent implements OnInit {
 
   turnosPendientes: TurnoPendiente[] = [];
-  nombrePaciente: string = "Nombre Paciente"; // Eventualmente vendrá de un servicio de autenticación
+  nombrePaciente: string = "Nombre Paciente"; 
 
   constructor(private router: Router) { }
 
@@ -77,25 +76,16 @@ export class PendingShiftsComponent implements OnInit {
 
   verDetallesTurno(turnoId: string): void {
     console.log('Ver detalles del turno ID:', turnoId);
-    // Aquí podrías navegar a una página de detalle del turno si existiera
-    // this.router.navigate(['/detalle-turno', turnoId]);
-    alert('Funcionalidad "Ver Detalles" aún no implementada.');
   }
 
   cancelarTurno(turnoId: string): void {
     console.log('Intentando cancelar turno ID:', turnoId);
-    // Simulación: Cambiar estado a cancelado o eliminarlo de la lista
     const turno = this.turnosPendientes.find(t => t.id === turnoId);
     if (turno) {
-      // En una app real, no lo eliminarías así o llamarías a un servicio.
-      // Para simular y hacerlo "interesante", cambiamos su estado.
-      // O podrías filtrarlo: this.turnosPendientes = this.turnosPendientes.filter(t => t.id !== turnoId);
-      turno.estado = 'Cancelado'; // Esto requeriría que el template refleje el estado "Cancelado"
-      alert(`Turno ${turnoId} marcado como cancelado (simulación).`);
+      turno.estado = 'Cancelado'; 
     }
   }
   
-  // Navegaciones para la barra superior (si decides hacerla similar a pagina-hospital)
   navegarA(ruta: string): void {
     this.router.navigate([ruta]);
   }
