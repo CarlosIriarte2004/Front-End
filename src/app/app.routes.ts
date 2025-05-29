@@ -16,6 +16,7 @@ import { CalendarDoctorComponent } from './calendar-doctor/calendar-doctor.compo
 import { CalendarAdminComponent } from './calendar-admin/calendar-admin.component';
 import { PaginaClinicaComponent } from './pagina-clinica/pagina-clinica.component';
 import { PendingShiftsComponent } from './pending-shifts/pending-shifts.component';
+import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
@@ -76,12 +77,16 @@ export const routes: Routes = [
     path: 'calendario-doctor',
     component: CalendarDoctorComponent
   },
-   {
+  {
     path: 'calendario-admin',
     component: CalendarAdminComponent
   },
   { 
     path: 'turnos-pendientes', 
     component: PendingShiftsComponent 
+  },
+  {
+    path: 'calendario-clinica',
+    component: CalendarClinicaComponent
   },
 ];

@@ -8,17 +8,17 @@ interface CalendarDay {
   isToday: boolean;
   isSelected: boolean;
   date: Date;
-  events?: any[]; 
+  events?: any[];
 }
 
 @Component({
-  selector: 'app-calendar-doctor',
+  selector: 'app-calendar-clinica',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './calendar-doctor.component.html',
-  styleUrls: ['./calendar-doctor.component.css']
+  templateUrl: './calendar-clinica.component.html',
+  styleUrls: ['./calendar-clinica.component.css']
 })
-export class CalendarDoctorComponent implements OnInit {
+export class CalendarClinicaComponent implements OnInit {
   @Output() addReminderRequest = new EventEmitter<Date>();
 
   currentMonthDisplay: string = '';
