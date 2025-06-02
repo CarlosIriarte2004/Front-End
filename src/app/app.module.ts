@@ -1,4 +1,4 @@
-import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
+/*import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 
 @NgModule({
   declarations: [
@@ -12,5 +12,18 @@ import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes
   ],
   bootstrap: [AppComponent]
 })
+export class AppModule { }*/
+
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+
+@NgModule({
+  imports: [
+    // otros módulos...
+    HttpClientModule,
+  ],
+  // ...
+})
 export class AppModule { }
+
 
