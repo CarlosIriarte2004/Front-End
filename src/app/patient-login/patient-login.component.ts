@@ -35,7 +35,7 @@ export class PatientLoginComponent {
       next: res => {
         console.log('Login exitoso', res);
         localStorage.setItem('token', res.access_token);
-        this.router.navigate(['/registro-turno']); // ✅ Moved here
+        this.router.navigate(['/registro-turno']); 
       },
       error: err => {
         console.error('Login fallido:', err);

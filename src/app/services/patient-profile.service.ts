@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
 import { Observable, of, forkJoin } from 'rxjs';  
 import { catchError, tap } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 export interface PacienteInfo {
   nombreCompleto: string;
@@ -20,7 +22,28 @@ export interface PacienteInfo {
   estadoPenalizacion?: string;
   fotoUrl?: string;
 }
-
+interface DecodedToken {
+  newPaciente: {
+    id: string;
+    ci: number;
+    nombre: string;
+    apellido: string;
+    correoElectronico: string;
+    contrasenia: string;
+    fechaNac: string;
+    penalizado: boolean;
+    estadoCivil: string;
+    direccion: string;
+    tipoSangre: string;
+    telefono: number;
+    lugarNac: string;
+    genero: string;
+    
+    // Add any other fields if present in token
+  };
+  iat?: number;
+  exp?: number;
+}
 export interface HistorialEntry {
   id?: string; 
   fecha: string; 
@@ -39,28 +62,46 @@ export class PatientProfileService {
   constructor(private http: HttpClient) { }
 
   getPacienteInfo(): Observable<PacienteInfo> {
-    const mockPaciente: PacienteInfo = {
-      nombreCompleto: 'Juan Hector Perez Solis (Desde Servicio)', 
-      cedulaIdentidad: '9867867',
-      tipoSangre: 'ORH +',
-      nacionalidad: 'Boliviana',
-      telefonoFijo: '4865248',
-      telefonoMovil: '(+591) 72598635',
-      correoPersonal: 'HectorPeSol@gmail.com',
-      fechaNacimiento: '28/08/2001',
-      sexo: 'Masculino',
-      estadoCivil: 'Soltero',
-      lugarNacimiento: 'Cochabamba',
-      direccion: 'Av. America y Santa cruz',
-      numeroEmergencia: '(+591) 75864931',
-      estadoPenalizacion: 'No penalizado',
-      fotoUrl: '/assets/images/foto-perfil.png', 
-    };
-    return of(mockPaciente).pipe(
-      tap(data => console.log('Datos del perfil (servicio):', data))
-    );
-
+  if (typeof window === 'undefined') {
+    console.warn('Not in browser — no localStorage available');
+    return throwError(() => new Error('Not in browser'));
   }
+
+  const token = localStorage.getItem('token');
+
+  if (!token || token.split('.').length !== 3) {
+    console.error('Invalid or missing token:', token);
+    return throwError(() => new Error('Token is missing or malformed'));
+  }
+
+  try {
+    const decoded: DecodedToken = jwtDecode(token);
+    const paciente = decoded.newPaciente;
+
+    const mockPaciente: PacienteInfo = {
+      nombreCompleto: `${paciente.nombre} ${paciente.apellido}`,
+      cedulaIdentidad: paciente.ci.toString(),
+      tipoSangre: paciente.tipoSangre,
+      nacionalidad: 'Boliviana',
+      telefonoFijo: '',
+      telefonoMovil: paciente.telefono.toString(),
+      correoPersonal: paciente.correoElectronico,
+      fechaNacimiento: paciente.fechaNac,
+      sexo: paciente.genero,
+      estadoCivil: paciente.estadoCivil,
+      lugarNacimiento: paciente.lugarNac,
+      direccion: paciente.direccion,
+      numeroEmergencia: '',
+      estadoPenalizacion: paciente.penalizado ? 'Penalizado' : 'No penalizado',
+      fotoUrl: '/assets/images/foto-perfil.png',
+    };
+
+    return of(mockPaciente);
+  } catch (err) {
+    console.error('Error decoding token:', err);
+    return throwError(() => new Error('JWT decoding failed'));
+  }
+}
 
   getHistorialMedico(): Observable<HistorialEntry[]> {
     const mockHistorial: HistorialEntry[] = [
