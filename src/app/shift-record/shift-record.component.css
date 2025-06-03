@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #66AABF
+  background-color: #33aeae
 }
 
 .top-navbar {
@@ -37,11 +37,7 @@
   display: flex;
   align-items: center;
   font-size: 0.9em;
-}
-
-.navbar-btn i { 
-  margin-right: 5px;
-  font-size: 1.2em; 
+  color:#ffff;
 }
 
 .user-btn {
@@ -49,6 +45,7 @@
 }
 
 .main-content {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding-top: 80px; 
   padding-left: 20px;
   padding-right: 20px;
