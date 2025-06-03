@@ -57,17 +57,8 @@ export class RegistroPacienteComponent {
     // ✅ Opcional para pruebas (borrar luego en producción)
     console.log('Contraseña ingresada:', this.paciente.contrasena);
 
-<<<<<<< HEAD
-    
-
-
-    if (!this.paciente.nombreCompleto || !this.paciente.cedulaIdentidad || !this.paciente.correoElectronico) {
-      console.error('Por favor, complete los campos obligatorios (Nombre, Cédula, Correo).');
-      
-=======
     if (!this.paciente.nombreCompleto || !this.paciente.cedulaIdentidad || !this.paciente.correoElectronico || !this.paciente.contrasena) {
       console.error('Por favor, complete los campos obligatorios (Nombre, Cédula, Correo, Contraseña).');
->>>>>>> f95e8fcabb75dbe46db83ecdfa90f6f7d21795e9
       return;
     }
 
@@ -82,8 +73,9 @@ export class RegistroPacienteComponent {
       tipoSangre: this.paciente.tipoSangre,
       telefono: Number(this.paciente.telefonoCelular || this.paciente.telefonoFijo || 0),
       lugarNac: this.paciente.lugarNacimiento,
-      genero: this.paciente.genero
-    };
+      genero: this.paciente.genero,
+      fechaNac: this.paciente.fechaNacimiento
+};
 
     this.patientsRegister.crearPaciente(datosTransformados).subscribe({
       next: (res) => {

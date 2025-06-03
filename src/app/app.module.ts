@@ -20,17 +20,7 @@ import { AppComponent } from './app.component';
 
   bootstrap: [AppComponent]
 })
-export class AppModule { }*/
-
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-
-@NgModule({
-  imports: [
-    // otros módulos...
-    HttpClientModule,
-  ],
-  // ...
-})
 export class AppModule { }
+
+
 

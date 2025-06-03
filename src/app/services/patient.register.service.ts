@@ -11,5 +11,8 @@ export class PatientRegisterService {
   crearPaciente(paciente: any): Observable<any> {
     return this.http.post(this.apiUrl, paciente);
   }
+  loginPaciente(correoElectronico: string, contrasenia: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, { correoElectronico, contrasenia });
+  }
 }
 

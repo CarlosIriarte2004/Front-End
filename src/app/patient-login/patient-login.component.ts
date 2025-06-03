@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PatientRegisterService } from '../services/patient.register.service';
 
 @Component({
   selector: 'app-patient-login',
@@ -19,17 +20,32 @@ export class PatientLoginComponent {
     password: ''
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private pacienteRegistro: PatientRegisterService
+  ) { }
 
   onLoginSubmit(): void {
-    console.log('Datos de login (Paciente):', this.loginData);
+  console.log('Datos de login (Paciente):', this.loginData);
 
-    if (this.loginData.email && this.loginData.password) {
-      this.router.navigate(['/registro-turno']); 
-    } else {
-      alert('Por favor, ingresa email y contraseña.');
-    }
+  if (this.loginData.email && this.loginData.password) {
+    this.pacienteRegistro.loginPaciente(
+      this.loginData.email,
+      this.loginData.password
+    ).subscribe({
+      next: res => {
+        console.log('Login exitoso', res);
+        localStorage.setItem('token', res.access_token);
+        this.router.navigate(['/registro-turno']); // ✅ Moved here
+      },
+      error: err => {
+        console.error('Login fallido:', err);
+        alert('Correo o contraseña incorrectos.');
+      }
+    });
+  } else {
+    alert('Por favor, ingresa email y contraseña.');
   }
+}
   navigateToRegistration(): void {
     console.log("Navegando a la página de registro...");
     this.router.navigate(['/registro-paciente']);
