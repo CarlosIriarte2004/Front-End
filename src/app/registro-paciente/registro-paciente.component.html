@@ -7,13 +7,14 @@
   </div>
 
   <form class="registration-form" (ngSubmit)="crearCuenta()" #form="ngForm">
+
     <div class="form-row">
       <label for="nombreCompleto">Nombre completo:</label>
       <input type="text" id="nombreCompleto" name="nombreCompleto" [(ngModel)]="paciente.nombreCompleto" required>
     </div>
 
     <div class="form-row">
-      <label for="cedulaIdentidad">Cedula de identidad:</label>
+      <label for="cedulaIdentidad">Cédula de identidad:</label>
       <input type="text" id="cedulaIdentidad" name="cedulaIdentidad" [(ngModel)]="paciente.cedulaIdentidad" required>
     </div>
 
@@ -23,7 +24,7 @@
         <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="paciente.fechaNacimiento">
       </div>
       <div class="input-group">
-        <label for="genero">Genero:</label>
+        <label for="genero">Género:</label>
         <input type="text" id="genero" name="genero" [(ngModel)]="paciente.genero">
       </div>
     </div>
@@ -51,25 +52,52 @@
     </div>
 
     <div class="form-row full-width-input">
-      <label for="direccion">Direccion:</label>
+      <label for="direccion">Dirección:</label>
       <input type="text" id="direccion" name="direccion" [(ngModel)]="paciente.direccion">
     </div>
 
-    <div class="form-row two-columns">
-      <div class="input-group">
-        <label for="telefonoFijo">Telefono fijo:</label>
-        <input type="text" id="telefonoFijo" name="telefonoFijo" [(ngModel)]="paciente.telefonoFijo">
-      </div>
-      <div class="input-group">
-        <label for="telefonoCelular">Telefono celular:</label>
-        <input type="text" id="telefonoCelular" name="telefonoCelular" [(ngModel)]="paciente.telefonoCelular">
-      </div>
+    <!-- Teléfono celular en fila única -->
+    <div class="form-row full-width-input">
+      <label for="telefonoCelular">Teléfono celular:</label>
+      <input type="text" id="telefonoCelular" name="telefonoCelular" [(ngModel)]="paciente.telefonoCelular">
     </div>
 
-    <div class="form-row full-width-input">
-      <label for="correoElectronico">Correo electronico:</label>
-      <input type="email" id="correoElectronico" name="correoElectronico" [(ngModel)]="paciente.correoElectronico" required>
+    <!-- Correo electrónico y contraseña en dos columnas -->
+<div class="form-row two-columns">
+  <div class="input-group">
+    <label for="correoElectronico">Correo electrónico:</label>
+    <input
+      type="email"
+      id="correoElectronico"
+      name="correoElectronico"
+      [(ngModel)]="paciente.correoElectronico"
+      required />
+  </div>
+
+  <div class="input-group password-group">
+    <label for="contrasena">Contraseña:</label>
+    <div class="password-wrapper">
+      <input
+        [type]="verContrasena ? 'text' : 'password'"
+        id="contrasena"
+        name="contrasena"
+        [(ngModel)]="paciente.contrasena"
+        required
+        placeholder="Ingresa una contraseña segura" />
+      <button
+        type="button"
+        class="toggle-password"
+        (click)="verContrasena = !verContrasena">
+        {{ verContrasena ? '🙈' : '👁️' }}
+      </button>
     </div>
-    <button type="submit">Crear cuenta</button>
-  </form>
+  </div>
+</div> 
+
+<!-- Botón en su propia fila -->
+<div class="form-row full-width-input">
+  <button type="submit">Crear cuenta</button>
+</div>
+
+</form>
 </div>
