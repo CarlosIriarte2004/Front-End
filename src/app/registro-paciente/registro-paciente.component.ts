@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms'; 
 import { Router } from '@angular/router'; 
-import { HttpClient, } from '@angular/common/http';
-import { provideHttpClient } from '@angular/common/http';
+import { PatientRegisterService } from '../services/patient.register.service';
 
 interface Paciente {
   nombreCompleto: string;
@@ -44,7 +43,8 @@ export class RegistroPacienteComponent {
     correoElectronico: ''
   };
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private patientsRegister: PatientRegisterService) {}
+
 
   crearCuenta(): void {
 
@@ -59,36 +59,35 @@ export class RegistroPacienteComponent {
       return;
     }
 
-    const pacienteDTO = {
-  ci: Number(this.paciente.cedulaIdentidad),
-  nombre: this.paciente.nombreCompleto.split(' ')[0],
-  apellido: this.paciente.nombreCompleto.split(' ').slice(1).join(' '),
-  contrasenia: 'contraseniaTemporal123', // deberías capturarla en el formulario
-  estadoCivil: this.paciente.estadoCivil,
-  direccion: this.paciente.direccion,
-  correoElectronico: this.paciente.correoElectronico,
-  tipoSangre: this.paciente.tipoSangre,
-  telefono: Number(this.paciente.telefonoCelular), // o combina fijo + celular
-  lugarNac: this.paciente.lugarNacimiento,
-  genero: this.paciente.genero
+    const datosTransformados = {
+      ci: this.paciente.cedulaIdentidad,
+      nombre: this.paciente.nombreCompleto.split(' ')[0],
+      apellido: this.paciente.nombreCompleto.split(' ').slice(1).join(' '),
+      contrasenia: '123456', // temporal, debes agregarlo al formulario
+      estadoCivil: this.paciente.estadoCivil,
+      direccion: this.paciente.direccion,
+      correoElectronico: this.paciente.correoElectronico,
+      tipoSangre: this.paciente.tipoSangre,
+      telefono: Number(this.paciente.telefonoCelular || this.paciente.telefonoFijo || 0),
+      lugarNac: this.paciente.lugarNacimiento,
+      genero: this.paciente.genero,
 };
 
+this.patientsRegister.crearPaciente(datosTransformados).subscribe({
+  next: (res) => {
+    alert('Paciente registrado con éxito');
+  },
+  error: (err) => {
+    console.error('Error al registrar paciente:', err);
+    alert('Error al registrar paciente');
+  }
+});
 
-    this.http.post('http://localhost:3000/paciente', pacienteDTO).subscribe(
-    response => {
-      console.log('Cuenta creada exitosamente para:', this.paciente.nombreCompleto);
-      alert('¡Cuenta creada exitosamente!');
-    },
-    error => {
-      console.error('Error al crear la cuenta:', error);
-      alert('Error al crear la cuenta.');
-    }
-  );
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       console.log('Cuenta creada exitosamente para:', this.paciente.nombreCompleto);
       alert('¡Cuenta creada exitosamente!'); 
-    }, 1500); 
+    }, 1500); */
   }
 }
 
