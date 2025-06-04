@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MedicRegisterService } from '../services/medic.register.service';
+
 
 @Component({
   selector: 'app-login-doctor',
@@ -19,12 +21,29 @@ export class LoginDoctorComponent {
     password: ''
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private medicoRegistro: MedicRegisterService
+  ) { }
 
   onLoginSubmit(): void {
     console.log('Datos de login:', this.loginData);
+
     if (this.loginData.email && this.loginData.password) {
-      this.router.navigate(['/pagina-medico']);
+      this.medicoRegistro.loginMedico(
+        this.loginData.email,
+        this.loginData.password
+      ).subscribe({
+        next: res => {
+          console.log('Login existoso', res);
+          localStorage.setItem('token', res.access_token);
+          this.router.navigate(['/pagina-medico']);
+        },
+        error: err => {
+          console.error('Login Fallido:', err);
+          alert('Correo o contraseña incorrectos.')
+        }
+      });
+
     } else {
       alert('Por favor, ingresa email y contraseña.');
     }

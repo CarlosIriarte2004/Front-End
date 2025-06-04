@@ -23,7 +23,7 @@ interface Paciente {
 @Component({
   selector: 'app-registro-paciente', 
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule], 
   templateUrl: './registro-paciente.component.html', 
   styleUrls: ['./registro-paciente.component.css'] 
 })
@@ -42,7 +42,7 @@ export class RegistroPacienteComponent {
     telefonoFijo: '',
     telefonoCelular: '',
     correoElectronico: '',
-    contrasena: '' // ✅ Inicializado
+    contrasena: ''
   };
 
    verContrasena: boolean = false;
@@ -66,16 +66,15 @@ export class RegistroPacienteComponent {
       ci: this.paciente.cedulaIdentidad,
       nombre: this.paciente.nombreCompleto.split(' ')[0],
       apellido: this.paciente.nombreCompleto.split(' ').slice(1).join(' '),
-      contrasenia: this.paciente.contrasena, // ✅ Contraseña real del usuario
+      contrasenia: this.paciente.contrasena,
       estadoCivil: this.paciente.estadoCivil,
       direccion: this.paciente.direccion,
       correoElectronico: this.paciente.correoElectronico,
       tipoSangre: this.paciente.tipoSangre,
       telefono: Number(this.paciente.telefonoCelular || this.paciente.telefonoFijo || 0),
       lugarNac: this.paciente.lugarNacimiento,
-      genero: this.paciente.genero,
-      fechaNac: this.paciente.fechaNacimiento
-};
+      genero: this.paciente.genero
+    };
 
     this.patientsRegister.crearPaciente(datosTransformados).subscribe({
       next: (res) => {
