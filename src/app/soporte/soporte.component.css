@@ -1,0 +1,95 @@
+/* Contenedor principal */
+.soporte-container {
+  background-color: #5c9ead;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.soporte-header-correcto {
+  background-color: #2e5e73;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-correcto {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  height: 70px;
+}
+
+.titulo-header-correcto {
+  color: #ffffff;
+  font-size: 2.2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Tarjetas */
+.soporte-tarjetas {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 60px 20px 0;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  background-color: #b2ffff;
+  width: 180px;
+  height: 180px;
+  font-weight: 600;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  background-color: #a5f7f7;
+}
+
+/* Footer */
+.soporte-footer {
+  background-color: #aefcff;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 14px;
+  gap: 20px;
+  margin-top: 205px; /* Aquí está más abajo aún */
+}
+
+
+.footer-item {
+  text-align: center;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 150px;
+}
+
+.footer-item::before {
+  content: "📞";
+  font-size: 22px;
+  color: #e91e63;
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer-item:hover::before {
+  transform: scale(1.3);
+  color: #c2185b;
+}
