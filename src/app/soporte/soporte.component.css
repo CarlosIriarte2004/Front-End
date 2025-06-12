@@ -53,9 +53,9 @@
 .tarjeta:hover {
   transform: translateY(-6px);
   background-color: #a5f7f7;
+  cursor:pointer;
 }
 
-/* Footer */
 .soporte-footer {
   background-color: #aefcff;
   padding: 30px 20px;
@@ -65,7 +65,7 @@
   font-weight: 600;
   font-size: 14px;
   gap: 20px;
-  margin-top: 205px; /* Aquí está más abajo aún */
+  margin-top: 205px; 
 }
 
 
