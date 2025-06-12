@@ -25,6 +25,7 @@ export class RegistroMedicoComponent {
     telefonoMovil: '',
     numeroEmergencia: '',
     trabajaEn: '',
+    especialidad: '',
     correoElectronico: '',
     contrasena: ''        
   };
