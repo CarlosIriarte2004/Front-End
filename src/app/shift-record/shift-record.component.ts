@@ -87,9 +87,10 @@ export class ShiftRecordComponent implements OnInit {
     console.log('Buscando:', this.searchTerm);
   }
 
-  verMedicosPorEspecialidad(especialidadId: string): void {
-    console.log('Ver médicos para la especialidad:', especialidadId);
-  }
+  verMedicosPorEspecialidad(idEspecialidad: string): void {
+  console.log('Navegando a ver médicos para la especialidad:', idEspecialidad);
+  this.router.navigate(['/especialidad', idEspecialidad]);
+}
 
   verPerfilUsuario(): void {
     console.log('Ir al perfil del usuario');

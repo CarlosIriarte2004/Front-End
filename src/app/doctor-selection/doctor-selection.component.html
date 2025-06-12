@@ -1,0 +1,34 @@
+<div class="doctor-selection-container">
+  <header class="page-header">
+    <img src="/assets/logo-salud-total-transparente.png" alt="Logo" class="header-logo">
+    <h1 *ngIf="especialidadActual">Médicos en {{ especialidadActual.nombre }}</h1>
+    <h1 *ngIf="!especialidadActual && !isLoading">Especialidad no encontrada</h1>
+  </header>
+
+  <div *ngIf="isLoading" class="loading-message">
+    Buscando médicos...
+  </div>
+
+  <main class="main-content" *ngIf="!isLoading">
+    <div *ngIf="medicosMostrados.length > 0; else noMedicosTemplate" class="doctors-grid">
+      
+      <div *ngFor="let medico of medicosMostrados" class="doctor-card">
+        <img [src]="medico.fotoUrl || '/assets/images/perfil-vacio.png'" alt="Foto de {{ medico.nombre }}" class="doctor-photo">
+        <div class="doctor-info">
+          <h3>{{ medico.nombre }}</h3>
+          <p>{{ medico.resumen }}</p>
+        </div>
+        <div class="card-actions">
+          <button (click)="seleccionarMedico(medico.id)">Agendar Turno</button>
+        </div>
+      </div>
+
+    </div>
+
+    <ng-template #noMedicosTemplate>
+      <div class="no-results">
+        <p>No se encontraron médicos disponibles para esta especialidad.</p>
+        </div>
+    </ng-template>
+  </main>
+</div>

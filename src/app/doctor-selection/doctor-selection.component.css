@@ -1,0 +1,124 @@
+:host {
+  display: block;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.doctor-selection-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header-logo {
+  height: 80px;
+  width: auto;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 5px;
+}
+
+.loading-message, .no-results {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 3rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna para la lista, más simple */
+  gap: 1.5rem;
+}
+
+.doctor-card {
+  display: flex;
+  flex-wrap: wrap; /* Permite que se adapte a pantallas pequeñas */
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.doctor-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e0e0e0;
+}
+
+.doctor-info {
+  flex: 1; /* Ocupa el espacio restante */
+  min-width: 250px; /* Para evitar que se comprima demasiado */
+}
+
+.doctor-info h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.doctor-info p {
+  margin: 0 0 15px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card-actions {
+  flex-basis: 100%; /* El footer ocupa toda una nueva línea en pantallas grandes */
+  text-align: right;
+  margin-top: 10px;
+}
+
+.card-actions button {
+  background-color: #2ecc71; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.card-actions button:hover {
+  background-color: #27ae60;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .doctor-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-actions {
+    text-align: center;
+    width: 100%;
+  }
+  .card-actions button {
+    width: 100%;
+  }
+}
