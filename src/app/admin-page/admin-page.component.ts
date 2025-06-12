@@ -76,6 +76,11 @@ export class AdminPageComponent implements OnInit {
     console.log('Navegando a la página de calendario...');
   }
 
+  goToListaHospitales(): void {
+    this.router.navigate(['/hospitales-clinicas']);
+    console.log('Navegando a la lista...');
+  }
+
   viewSystemLogs(): void {
     console.log('Viendo logs del sistema...');
   }
