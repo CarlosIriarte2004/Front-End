@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';   
+import { PatientProfileService } from '../services/patient-profile.service';
 
 interface Especialidad {
   id: string;
@@ -27,9 +28,15 @@ export class ShiftRecordComponent implements OnInit {
 
   nombreUsuario: string = "Tomas"; 
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private profileService: PatientProfileService) {}
 
   ngOnInit(): void {
+    this.profileService.getPacienteName().subscribe({
+      next: (response) => {
+        this.nombreUsuario = response;
+        console.log('Datos del Usuario:', this.nombreUsuario);
+      }
+    })
     this.cargarEspecialidades();
     this.filtrarEspecialidades(); 
   }

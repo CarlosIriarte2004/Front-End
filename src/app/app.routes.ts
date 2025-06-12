@@ -17,7 +17,10 @@ import { CalendarAdminComponent } from './calendar-admin/calendar-admin.componen
 import { PaginaClinicaComponent } from './pagina-clinica/pagina-clinica.component';
 import { PendingShiftsComponent } from './pending-shifts/pending-shifts.component';
 import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.component';
+import { PerfilMedicoComponent } from './perfil-medico/perfil-medico.component';
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
+import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component';
+import { RegistroMedicoComponent } from './registro-medico/registro-medico.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component'; 
 import { DoctorSelectionComponent } from './doctor-selection/doctor-selection.component'; 
@@ -43,6 +46,9 @@ export const routes: Routes = [
   { path: 'calendario-clinica', component: CalendarClinicaComponent },
   { path: 'pacientes-penalizados', component: PacientesPenalizadosComponent },
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
-  { path: 'soporte', component: SoporteComponent }, 
   { path: 'especialidad/:idEspecialidad', component: DoctorSelectionComponent },
+  { path: 'soporte', component: SoporteComponent },
+  { path: 'perfil-medico', component: PerfilMedicoComponent },
+  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent },
+  { path: 'registro-medico', component: RegistroMedicoComponent},
 ];

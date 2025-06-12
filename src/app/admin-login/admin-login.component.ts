@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';   
+import { AdminRegisterService } from '../services/admin.register.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -19,14 +20,31 @@ export class AdminLoginComponent {
     password: ''
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private adminRegistro: AdminRegisterService
+  ) { }
 
   onLoginSubmit(): void {
     console.log('Datos de login:', this.loginData);
-    if (this.loginData.email && this.loginData.password) {
-      this.router.navigate(['/pagina-admin']); 
 
-    } else {
+    if (this.loginData.email && this.loginData.password) {
+      this.adminRegistro.loginAdmin(
+        this.loginData.email,
+        this.loginData.password
+      ).subscribe({
+        next: res => {
+          console.log('Login existoso', res);
+          localStorage.setItem('token', res.access_token);
+         this.router.navigate(['/pagina-admin']); 
+
+    },
+    error: err => {
+      console.error('Login Fallido', err);
+      alert('Correo o contraseña incorrectos.')
+    }
+  });
+    
+  } else {
       alert('Por favor, ingresa email y contraseña.');
     }
   }

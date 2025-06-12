@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.section-container {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #444;
+  border-bottom: 2px solid #5fb3d6;
+  border-radius: 8px 8px 0 0;
+}
+
+.section-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  object-fit: cover;
+  border: 1px solid #5fb3d6;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #5fb3d6;
+}
+
+.content-box {
+  padding: 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 0 0 8px 8px;
+  border: 2px solid #5fb3d6;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-item {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.doctors-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.doctors-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.8em;
+  }
+
+  .section-header h2 {
+    font-size: 1.1em;
+  }
+
+  .doctors-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .section-header {
+    padding: 10px;
+  }
+
+  .section-header h2 {
+    font-size: 1em;
+  }
+
+  .content-box {
+    padding: 15px;
+  }
+}

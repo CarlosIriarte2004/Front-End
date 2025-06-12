@@ -2,7 +2,9 @@
   <header class="header">
     <div class="header-top">
       <div class="logo-section">
-        <img src="/assets/images/logo-salud-total-bolivia-sin-fondo.png" alt="Logo de la página" class="logo-icon">
+        <button class="profile-button" (click)="goToPerfilMedico()">
+          <img src="/assets/images/doctor-sin-fondo.png" alt="foto de perfil" class="foto-perfil">
+        </button>
         <span class="page-title">Página de médico</span>
       </div>
       <div class="emergency-contact">
@@ -10,13 +12,24 @@
         <span class="emergency-number">( 237 ) 681-812-255</span>
       </div>
     </div>
+
     <nav class="main-nav">
       <ul>
-        <li><a href="#" class="nav-link">Sobre Nosotros</a></li>
-        <li><a href="#" class="nav-link">Contacto de servicio técnico</a></li>
-        <li><a (click)="goToCalendario()" class="nav-link">Calendario</a></li>
-        <li><a (click)="goToNuevoTurno()" class="nav-link">Nuevo turno</a></li>
-        <li><a (click)="goToInicioConsulta()" class="nav-link">Inicio de consulta</a></li>
+        <li>
+          <a (click)="goToSobreNosotros()" class="nav-link">Sobre Nosotros</a>
+        </li>
+        <li>
+          <a (click)="goToSoporte()" class="nav-link">Servicio Técnico</a>
+        </li>
+        <li>
+          <a (click)="goToCalendario()" class="nav-link">Calendario</a>
+        </li>
+        <li>
+          <a (click)="goToNuevoTurno()" class="nav-link">Nuevo turno</a>
+        </li>
+        <li>
+          <a (click)="goToInicioConsulta()" class="nav-link">Inicio de consulta</a>
+        </li>
       </ul>
     </nav>
   </header>
