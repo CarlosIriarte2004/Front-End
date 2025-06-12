@@ -1,0 +1,25 @@
+<div class="contenedor">
+  <div class="seccion">
+    <div class="cabecera">
+      <img src="assets/fondo-salud-total.jpeg" alt="Logo" class="logo" />
+      <h2 class="titulo">HOSPITALES</h2>
+    </div>
+    <div class="contenido">
+      <div *ngFor="let hospital of hospitales" class="item">
+        {{ hospital.nombre }}
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="cabecera">
+      <img src="assets/fondo-salud-total.jpeg" alt="Logo" class="logo" />
+      <h2 class="titulo">CLÍNICAS</h2>
+    </div>
+    <div class="contenido">
+      <div *ngFor="let clinica of clinicas" class="item">
+        {{ clinica.nombre }}
+      </div>
+    </div>
+  </div>
+</div>

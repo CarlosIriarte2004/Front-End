@@ -20,7 +20,8 @@ import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.co
 import { PerfilMedicoComponent } from './perfil-medico/perfil-medico.component';
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
-import { SoporteComponent } from './soporte/soporte.component'; 
+import { SoporteComponent } from './soporte/soporte.component';
+import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component'; // ✅ AÑADIDO
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
@@ -44,8 +45,6 @@ export const routes: Routes = [
   { path: 'pacientes-penalizados', component: PacientesPenalizadosComponent },
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
   { path: 'soporte', component: SoporteComponent },
-  {
-    path: 'perfil-medico',
-    component: PerfilMedicoComponent
-  },
+  { path: 'perfil-medico', component: PerfilMedicoComponent },
+  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent } // ✅ AÑADIDO
 ];
