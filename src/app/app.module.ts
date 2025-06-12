@@ -3,21 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import { AppComponent } from './app.component';
 
 // Componentes tradicionales
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     PacientesPenalizadosComponent,
     HospitalesClinicasComponent
-    
   ],
   imports: [
     BrowserModule,
