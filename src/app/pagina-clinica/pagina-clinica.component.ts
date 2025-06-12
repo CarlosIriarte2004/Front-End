@@ -72,6 +72,11 @@ export class PaginaClinicaComponent {
     console.log('Navegando a registro medico...');
   }
 
+  goToListaPenalizados(): void {
+    this.router.navigate(['/pacientes-penalizados']);
+    console.log('Navegando a pacientes penalizados...');
+  }
+
   verEnCalendario(cita: Cita): void {
     console.log('Ver en calendario:', cita);
     alert(`Cita con ${cita.doctor} el ${cita.fecha} a las ${cita.hora} - Abriendo calendario... (simulado)`);
