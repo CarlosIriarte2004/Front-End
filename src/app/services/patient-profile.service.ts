@@ -4,6 +4,7 @@ import { Observable, of, forkJoin } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
+import { NonNullableFormBuilder } from '@angular/forms';
 
 export interface PacienteInfo {
   nombreCompleto: string;
@@ -50,6 +51,9 @@ export interface HistorialEntry {
   tipo: string;
   descripcion: string;
   doctor?: string;
+}
+export interface NombrePaciente {
+  nombre: string;
 }
 
 @Injectable({
@@ -121,6 +125,25 @@ export class PatientProfileService {
       historial: this.getHistorialMedico()
     });
   }
+  
+  getPacienteName(): Observable<string>{
+    const token = localStorage.getItem('token');
+
+  if (!token || token.split('.').length !== 3) {
+    console.error('Invalid or missing token:', token);
+    return throwError(() => new Error('Token is missing or malformed'));
+  }
+
+  try {
+    const decoded: DecodedToken = jwtDecode(token);
+    const paciente = decoded.newPaciente;
+
+    return of(paciente.nombre);
+    } catch (err) {
+    console.error('Error decoding token:', err);
+    return throwError(() => new Error('JWT decoding failed'));
+  }
+  };
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
