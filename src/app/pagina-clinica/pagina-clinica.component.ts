@@ -57,6 +57,11 @@ export class PaginaClinicaComponent {
     console.log('Navegando a la página de calendario...');
   }
 
+  goToRegistroMedico(): void {
+    this.router.navigate(['/registro-medico']);
+    console.log('Navegando a registro medico...');
+  }
+
   verEnCalendario(cita: Cita): void {
     console.log('Ver en calendario:', cita);
     alert(`Cita con ${cita.doctor} el ${cita.fecha} a las ${cita.hora} - Abriendo calendario... (simulado)`);

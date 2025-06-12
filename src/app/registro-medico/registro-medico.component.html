@@ -1,0 +1,104 @@
+<div class="registro-container">
+  <div class="header">
+    <h1 class="title">REGISTRO DE MÉDICO</h1>
+    <div class="logo">
+      <img src="/assets/images/logo-salud-total-bolivia-sin-fondo.png" alt="Logo de la Clínica">
+    </div>
+  </div>
+
+  <form #registroForm="ngForm" (ngSubmit)="onSubmit(registroForm)">
+    <fieldset>
+      <legend>Información Personal</legend>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="nombreCompleto">Nombre completo:</label>
+          <input id="nombreCompleto" type="text" name="nombreCompleto" [(ngModel)]="medico.nombreCompleto" #nombreCompletoInput="ngModel" required>
+          <div *ngIf="nombreCompletoInput.invalid && nombreCompletoInput.touched" class="error-message">El nombre es requerido.</div>
+        </div>
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de nacimiento:</label>
+          <input id="fechaNacimiento" type="date" name="fechaNacimiento" [(ngModel)]="medico.fechaNacimiento" #fechaNacimientoInput="ngModel" required>
+          <div *ngIf="fechaNacimientoInput.invalid && fechaNacimientoInput.touched" class="error-message">La fecha es requerida.</div>
+        </div>
+        <div class="form-group">
+          <label for="cedulaIdentidad">Cédula de identidad:</label>
+          <input id="cedulaIdentidad" type="text" name="cedulaIdentidad" [(ngModel)]="medico.cedulaIdentidad" #cedulaIdentidadInput="ngModel" required>
+          <div *ngIf="cedulaIdentidadInput.invalid && cedulaIdentidadInput.touched" class="error-message">La cédula es requerida.</div>
+        </div>
+        <div class="form-group">
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" name="sexo" [(ngModel)]="medico.sexo" #sexoInput="ngModel" required>
+            <option [ngValue]="null" disabled>Seleccione...</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+          <div *ngIf="sexoInput.invalid && sexoInput.touched" class="error-message">El sexo es requerido.</div>
+        </div>
+        <div class="form-group">
+          <label for="tipoSangre">Tipo de sangre:</label>
+          <input id="tipoSangre" type="text" name="tipoSangre" [(ngModel)]="medico.tipoSangre">
+        </div>
+
+        <div class="form-group">
+          <label for="estadoCivil">Estado civil:</label>
+          <select id="estadoCivil" name="estadoCivil" [(ngModel)]="medico.estadoCivil">
+            <option [ngValue]="null" disabled>Seleccione...</option>
+            <option value="Soltero">Soltero/a</option>
+            <option value="Casado">Casado/a</option>
+            <option value="Divorciado">Divorciado/a</option>
+            <option value="Viudo">Viudo/a</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Información de la Cuenta</legend>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="correoElectronico">Correo electrónico:</label>
+                <input id="correoElectronico" type="email" name="correoElectronico" [(ngModel)]="medico.correoElectronico" #correoInput="ngModel" required email>
+                <div *ngIf="correoInput.touched && correoInput.errors?.['required']" class="error-message">El correo es requerido.</div>
+                <div *ngIf="correoInput.touched && correoInput.errors?.['email']" class="error-message">Ingrese un correo válido.</div>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <div class="password-wrapper">
+                    <input [type]="verContrasena ? 'text' : 'password'" id="contrasena" name="contrasena" [(ngModel)]="medico.contrasena" #contrasenaInput="ngModel" required minlength="6">
+                    <button type="button" class="toggle-password" (click)="verContrasena = !verContrasena">
+                        {{ verContrasena ? '🙈' : '👁️' }}
+                    </button>
+                </div>
+                <div *ngIf="contrasenaInput.touched && contrasenaInput.errors?.['required']" class="error-message">La contraseña es requerida.</div>
+                <div *ngIf="contrasenaInput.touched && contrasenaInput.errors?.['minlength']" class="error-message">La contraseña debe tener al menos 6 caracteres.</div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Datos de Origen y Contacto</legend>
+      <div class="form-grid">
+        <div class="form-group"><label for="nacionalidad">Nacionalidad:</label><input id="nacionalidad" type="text" name="nacionalidad" [(ngModel)]="medico.nacionalidad" #nacionalidadInput="ngModel" required><div *ngIf="nacionalidadInput.invalid && nacionalidadInput.touched" class="error-message">La nacionalidad es requerida.</div></div>
+        <div class="form-group"><label for="lugarNacimiento">Lugar de nacimiento:</label><input id="lugarNacimiento" type="text" name="lugarNacimiento" [(ngModel)]="medico.lugarNacimiento" #lugarNacimientoInput="ngModel" required><div *ngIf="lugarNacimientoInput.invalid && lugarNacimientoInput.touched" class="error-message">Este campo es requerido.</div></div>
+        <div class="form-group"><label for="direccion">Dirección:</label><input id="direccion" type="text" name="direccion" [(ngModel)]="medico.direccion" #direccionInput="ngModel" required><div *ngIf="direccionInput.invalid && direccionInput.touched" class="error-message">La dirección es requerida.</div></div>
+        <div class="form-group"><label for="telefonoMovil">Teléfono móvil:</label><input id="telefonoMovil" type="tel" name="telefonoMovil" [(ngModel)]="medico.telefonoMovil" #telefonoMovilInput="ngModel" required><div *ngIf="telefonoMovilInput.invalid && telefonoMovilInput.touched" class="error-message">El teléfono es requerido.</div></div>
+        <div class="form-group"><label for="numeroEmergencia">Número de emergencia:</label><input id="numeroEmergencia" type="tel" name="numeroEmergencia" [(ngModel)]="medico.numeroEmergencia" #numeroEmergenciaInput="ngModel" required><div *ngIf="numeroEmergenciaInput.invalid && numeroEmergenciaInput.touched" class="error-message">El número de emergencia es requerido.</div></div>
+      </div>
+    </fieldset>
+
+     <fieldset>
+      <legend>Información Laboral</legend>
+      <div class="form-grid-single">
+        <div class="form-group">
+          <label for="trabajaEn">Trabaja en:</label>
+          <input id="trabajaEn" type="text" name="trabajaEn" [(ngModel)]="medico.trabajaEn" #trabajaEnInput="ngModel" required>
+           <div *ngIf="trabajaEnInput.invalid && trabajaEnInput.touched" class="error-message">Este campo es requerido.</div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="button-container">
+      <button type="submit" class="submit-btn" [disabled]="registroForm.invalid">Crear Cuenta de Médico</button>
+    </div>
+  </form>
+</div>

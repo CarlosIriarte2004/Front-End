@@ -17,7 +17,7 @@ interface Paciente {
   telefonoFijo: string;
   telefonoCelular: string;
   correoElectronico: string;
-  contrasena: string; // ✅ Campo agregado
+  contrasena: string;
 }
 
 @Component({
@@ -54,7 +54,6 @@ export class RegistroPacienteComponent {
 
   crearCuenta(): void {
     console.log('Datos del paciente a registrar:', this.paciente);
-    // ✅ Opcional para pruebas (borrar luego en producción)
     console.log('Contraseña ingresada:', this.paciente.contrasena);
 
     if (!this.paciente.nombreCompleto || !this.paciente.cedulaIdentidad || !this.paciente.correoElectronico || !this.paciente.contrasena) {
