@@ -8,21 +8,14 @@
     <div class="nav-tabs">
       <button
         class="nav-tab"
-        [class.active]="activeTab === 'hospitales'"
-        (click)="selectTab('hospitales')">
-        Lista de hospitales y clinicas
-      </button>
-      <button
-        class="nav-tab"
         [class.active]="activeTab === 'auditoria'"
         (click)="selectTab('auditoria')">
         Auditoria
       </button>
     </div>
-
-    <button class="calendar-button" (click)="goToCalendario()">
-      Calendario
-    </button>
+     <div class="button-group"> <li><a (click)="goToCalendario()" class="calendar-button">Calendario</a></li>
+     <li><a (click)="goToListaHospitales()" class="hospitalesClinicas-button">Lista Hospitales y Clinicas</a></li>
+  </div>
   </nav>
 
   <main class="main-content">
