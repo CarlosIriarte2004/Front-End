@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  standalone: true,
   selector: 'app-hospitales-clinicas',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './hospitales-clinicas.component.html',
-  styleUrl: './hospitales-clinicas.component.css'
+  styleUrls: ['./hospitales-clinicas.component.css']
 })
 export class HospitalesClinicasComponent {
-
+  hospitales: any[] = []; // 👈 Vacío pero definido
+  clinicas: any[] = [];   // 👈 Vacío pero definido
 }
