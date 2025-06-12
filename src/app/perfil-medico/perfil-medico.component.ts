@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MedicProfileService } from '../services/medic-profile.service';
 
 export interface MedicoProfile {
   fotoUrl?: string;
@@ -27,6 +28,8 @@ export interface MedicoProfile {
 export class PerfilMedicoComponent implements OnInit {
 
   @Input() medicoId: string | number | null = null;
+  public isLoading: boolean = true; 
+  public errorMessage: string | null = null; 
 
   medico: MedicoProfile = {
     fotoUrl: 'assets/images/doctor-sin-fondo.png',
@@ -34,7 +37,7 @@ export class PerfilMedicoComponent implements OnInit {
     fechaNacimiento: '17/08/1995',
     cedulaIdentidad: '9887560',
     sexo: 'Masculino',
-    'tipoSangre': 'A-',
+    tipoSangre: 'A-',
     estadoCivil: 'Casado',
     nacionalidad: 'Boliviano',
     lugarNacimiento: 'Santa Cruz',
@@ -44,9 +47,27 @@ export class PerfilMedicoComponent implements OnInit {
     trabajaEn: 'Clínica Los Olivos'
   };
 
- constructor() { }
+ constructor(private servicioPerfilMedico: MedicProfileService) { }
 
   ngOnInit(): void {
      console.log('PerfilMedicoComponent inicializado');
+     this.cargarDatos();
+  }
+  cargarDatos(): void {
+    this.isLoading = true;
+    this.errorMessage = null;
+
+    this.servicioPerfilMedico.getMedicoInfo().subscribe({
+      next: (response) => {
+        this.medico = response;
+        this.isLoading = false;
+        console.log('Datos del perfil cargados:', this.medico);
+      },
+      error: (err) => {
+        this.errorMessage = 'Error al cargar la información del perfil. Por favor, intente más tarde.';
+        this.isLoading = false;
+        console.error('Error en el componente al cargar datos:', err);
+      }
+    });
   }
 }
