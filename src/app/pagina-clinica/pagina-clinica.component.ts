@@ -57,6 +57,16 @@ export class PaginaClinicaComponent {
     console.log('Navegando a la página de calendario...');
   }
 
+  goToSobreNosotros(): void {
+    this.router.navigate(['/sobre-nosotros']);
+    console.log('Navegando a sobre nosotros...');
+  }
+
+  goToSoporte(): void {
+    this.router.navigate(['/soporte']);
+    console.log('Navegando a soporte...');
+  }
+
   goToRegistroMedico(): void {
     this.router.navigate(['/registro-medico']);
     console.log('Navegando a registro medico...');
