@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
-// Componentes propios
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component';
 

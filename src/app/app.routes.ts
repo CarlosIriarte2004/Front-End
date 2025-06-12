@@ -46,5 +46,5 @@ export const routes: Routes = [
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
   { path: 'soporte', component: SoporteComponent },
   { path: 'perfil-medico', component: PerfilMedicoComponent },
-  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent } // ✅ AÑADIDO
+  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent }
 ];
