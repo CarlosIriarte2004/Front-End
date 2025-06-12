@@ -136,7 +136,7 @@
   height: 40px;
 }
 
-/* Estilos para pantallas más pequeñas */
+
 @media (max-width: 768px) {
   .main-info {
     flex-direction: column;

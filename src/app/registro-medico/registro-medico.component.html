@@ -88,11 +88,16 @@
 
      <fieldset>
       <legend>Información Laboral</legend>
-      <div class="form-grid-single">
+      <div class="form-grid">
         <div class="form-group">
           <label for="trabajaEn">Trabaja en:</label>
           <input id="trabajaEn" type="text" name="trabajaEn" [(ngModel)]="medico.trabajaEn" #trabajaEnInput="ngModel" required>
            <div *ngIf="trabajaEnInput.invalid && trabajaEnInput.touched" class="error-message">Este campo es requerido.</div>
+        </div>
+        <div class="form-group">
+          <label for="Especialidad">Especialidad:</label>
+          <input id="Especialidad" type="text" name="Especialidad" [(ngModel)]="medico.especialidad" #especialidadInput="ngModel" required>
+           <div *ngIf="especialidadInput.invalid && especialidadInput.touched" class="error-message">Este campo es requerido.</div>
         </div>
       </div>
     </fieldset>

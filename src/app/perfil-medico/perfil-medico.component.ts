@@ -15,6 +15,7 @@ export interface MedicoProfile {
   telefonoMovil: string;
   numeroEmergencia: string;
   trabajaEn: string;
+  Especialidad: string;
 }
 
 @Component({
@@ -41,7 +42,8 @@ export class PerfilMedicoComponent implements OnInit {
     direccion: 'Av. Villazon',
     telefonoMovil: '(+591) 76787432',
     numeroEmergencia: '(+591) 72340129',
-    trabajaEn: 'Clínica Los Olivos'
+    trabajaEn: 'Clínica Los Olivos',
+    Especialidad: 'Cardiología'
   };
 
  constructor() { }
