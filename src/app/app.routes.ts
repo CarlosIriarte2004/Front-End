@@ -19,7 +19,6 @@ import { PendingShiftsComponent } from './pending-shifts/pending-shifts.componen
 import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.component';
 import { PerfilMedicoComponent } from './perfil-medico/perfil-medico.component';
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
-import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component';
 import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component'; // ✅ AÑADIDO
 
@@ -43,8 +42,15 @@ export const routes: Routes = [
   { path: 'turnos-pendientes', component: PendingShiftsComponent },
   { path: 'calendario-clinica', component: CalendarClinicaComponent },
   { path: 'pacientes-penalizados', component: PacientesPenalizadosComponent },
-  { path: 'sobre-nosotros', component: SobreNosotrosComponent },
+
+  // ✅ Carga perezosa del componente standalone
+  {
+    path: 'sobre-nosotros',
+    loadComponent: () =>
+      import('./sobre-nosotros/sobre-nosotros.component').then(m => m.SobreNosotrosComponent)
+  },
+
   { path: 'soporte', component: SoporteComponent },
   { path: 'perfil-medico', component: PerfilMedicoComponent },
-  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent } // ✅ AÑADIDO
+  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent }
 ];

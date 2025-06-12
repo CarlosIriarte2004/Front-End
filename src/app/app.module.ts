@@ -7,15 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
-// Componentes propios
+// Componentes tradicionales
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PacientesPenalizadosComponent,
     HospitalesClinicasComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -27,3 +29,4 @@ import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-cl
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
