@@ -89,6 +89,8 @@
   background-color: #00695C;
 }
 
+.clinica-nav ul li a,
+.clinica-nav ul li .nav-button,
 .nav-button {
   background-color: #00796B;
   border: none;
@@ -97,6 +99,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-size: 0.95em;
 }
 
 .nav-button .icon {
