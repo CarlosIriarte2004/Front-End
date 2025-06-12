@@ -79,6 +79,7 @@ export class DoctorSelectionComponent implements OnInit {
   }
 
   seleccionarMedico(idMedico: string): void {
-    console.log('Médico seleccionado con ID:', idMedico);
+  console.log('Navegando a la página de confirmación de turno para el médico ID:', idMedico);
+  this.router.navigate(['/medico', idMedico, 'confirmar-turno']);
   }
 }

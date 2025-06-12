@@ -24,6 +24,7 @@ import { RegistroMedicoComponent } from './registro-medico/registro-medico.compo
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component'; 
 import { DoctorSelectionComponent } from './doctor-selection/doctor-selection.component'; 
+import { ShiftConfirmationComponent } from './shift-confirmation/shift-confirmation.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
@@ -51,4 +52,5 @@ export const routes: Routes = [
   { path: 'perfil-medico', component: PerfilMedicoComponent },
   { path: 'hospitales-clinicas', component: HospitalesClinicasComponent },
   { path: 'registro-medico', component: RegistroMedicoComponent},
+  { path: 'medico/:idMedico/confirmar-turno', component: ShiftConfirmationComponent },
 ];

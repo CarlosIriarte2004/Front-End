@@ -1,0 +1,77 @@
+<div class="shift-confirmation-container">
+  <header class="page-main-header">
+    <div class="logo-container">
+      <img src="/assets/logo-salud-total-transparente.png" alt="Logo Salud Total">
+      <span>Salud Total Bolivia</span>
+    </div>
+  </header>
+
+  <div class="content-wrapper">
+    <div *ngIf="isLoading" class="loading-container">
+      <p>Cargando horarios...</p>
+    </div>
+
+    <div *ngIf="!isLoading && medico">
+      <header class="doctor-header">
+        <img [src]="medico.fotoUrl || '/assets/images/perfil-vacio.png'" alt="Foto de {{ medico.nombre }}" class="doctor-photo">
+        <div class="doctor-details">
+          <h1>Agenda tu turno con</h1>
+          <h2>{{ medico.nombre }}</h2>
+          <h3>{{ medico.especialidad }}</h3>
+        </div>
+      </header>
+
+      <main class="schedule-section">
+        <p class="instruction-text">Selecciona un horario disponible para agendar tu cita.</p>
+
+        <div class="time-slot-group">
+          <h4>Turnos Mañana</h4>
+          <div class="time-slots-grid">
+            <button *ngFor="let turno of medico.turnosManana"
+                    (click)="seleccionarTurno(turno)"
+                    [ngClass]="{
+                      'disponible': turno.estado === 'disponible',
+                      'reservado': turno.estado === 'reservado'
+                    }"
+                    [disabled]="turno.estado === 'reservado'">
+              {{ turno.hora }}
+            </button>
+          </div>
+        </div>
+
+        <div class="time-slot-group">
+          <h4>Turnos Tarde</h4>
+          <div class="time-slots-grid">
+            <button *ngFor="let turno of medico.turnosTarde"
+                    (click)="seleccionarTurno(turno)"
+                    [ngClass]="{
+                      'disponible': turno.estado === 'disponible',
+                      'reservado': turno.estado === 'reservado'
+                    }"
+                    [disabled]="turno.estado === 'reservado'">
+              {{ turno.hora }}
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div *ngIf="!isLoading && !medico" class="error-container">
+      <p>Lo sentimos, no se pudo encontrar la información del médico seleccionado.</p>
+    </div>
+  </div>
+
+  <div *ngIf="mostrarModalConfirmacion" class="modal-overlay">
+    <div class="modal-content">
+      <h3 class="modal-title">Confirmar Cita</h3>
+      <p *ngIf="turnoSeleccionado && medico">
+        ¿Estás seguro de que quieres agendar una cita con <strong>{{ medico.nombre }}</strong> a las <strong>{{ turnoSeleccionado.hora }}</strong>?
+      </p>
+      <div class="modal-actions">
+        <button class="btn-cancelar" (click)="cancelarConfirmacion()">Cancelar</button>
+        <button class="btn-confirmar" (click)="confirmarCita()">Sí, Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
