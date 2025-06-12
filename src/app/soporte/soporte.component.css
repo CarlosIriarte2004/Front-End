@@ -1,4 +1,3 @@
-/* Contenedor principal */
 .soporte-container {
   background-color: #5c9ead;
   min-height: 100vh;
@@ -6,7 +5,6 @@
   flex-direction: column;
 }
 
-/* Header */
 .soporte-header-correcto {
   background-color: #2e5e73;
   height: 100px;
@@ -30,7 +28,6 @@
   text-align: center;
 }
 
-/* Tarjetas */
 .soporte-tarjetas {
   display: flex;
   justify-content: center;
