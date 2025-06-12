@@ -3,7 +3,8 @@
 :host {
   display: block;
   font-family: 'Inter', sans-serif;
-  background-color: #f0f2f5; /* Un fondo suave para toda la página */
+  background-color: #f0f2f5;
+  /* Un fondo suave para toda la página */
   min-height: 100vh;
 }
 
@@ -12,20 +13,19 @@
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  max-width: 1200px; /* Limita el ancho máximo del contenido */
-  margin: 0 auto; /* Centra el contenedor */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para el contenedor principal */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   border-radius: 8px;
-  overflow: hidden; /* Asegura que los bordes redondeados se vean bien */
+  overflow: hidden;
 }
 
-/* Estilos del encabezado */
 .header {
-  background-color: #2c3e50; /* Color oscuro para el encabezado */
-  color: #ecf0f1; /* Texto claro */
+  background-color: #2c3e50;
+  color: #ecf0f1;
   padding: 1rem 2rem;
-  border-bottom: 5px solid #3498db; /* Línea azul debajo del encabezado */
+  border-bottom: 5px solid #3498db;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -41,12 +41,24 @@
   align-items: center;
 }
 
-.logo-icon {
-  width: 40px; /* Tamaño del logo */
-  height: 40px;
-  border-radius: 50%; /* Hace el logo redondo */
-  margin-right: 10px;
-  background-color: #ffffff; /* Fondo blanco para el placeholder */
+.profile-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-button:focus {
+  outline: none;
+}
+
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   border: 2px solid #3498db;
 }
 
@@ -64,13 +76,15 @@
 .emergency-label {
   display: block;
   font-weight: 600;
-  color: #e74c3c; /* Rojo para emergencia */
+  color: #e74c3c;
+  /* Rojo para emergencia */
 }
 
 .emergency-number {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #3498db; /* Azul para el número */
+  color: #3498db;
+  /* Azul para el número */
 }
 
 .main-nav ul {
@@ -78,14 +92,14 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-around; /* Distribuye los elementos uniformemente */
-  background-color: #34495e; /* Fondo ligeramente más claro para la barra de navegación */
+  justify-content: space-around;
+  background-color: #34495e;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .main-nav li {
-  flex-grow: 1; /* Permite que los elementos crezcan para llenar el espacio */
+  flex-grow: 1;
   text-align: center;
 }
 
@@ -96,19 +110,24 @@
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 5px; /* Bordes redondeados para los enlaces */
+  border-radius: 5px;
+  /* Bordes redondeados para los enlaces */
 }
 
-.nav-link:hover, .nav-link:focus {
-  background-color: #3498db; /* Azul al pasar el ratón */
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #3498db;
+  /* Azul al pasar el ratón */
   color: #ffffff;
 }
 
 /* Contenido principal */
 .main-content {
-  flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
+  flex-grow: 1;
+  /* Permite que el contenido principal ocupe el espacio restante */
   padding: 2rem;
-  background-color: #f9f9f9; /* Fondo claro para el contenido */
+  background-color: #f9f9f9;
+  /* Fondo claro para el contenido */
 }
 
 .inbox-title {
@@ -122,9 +141,12 @@
 
 .appointments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
-  gap: 2rem; /* Espacio entre las tarjetas */
-  justify-content: center; /* Centra las tarjetas si no llenan todo el ancho */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Columnas responsivas */
+  gap: 2rem;
+  /* Espacio entre las tarjetas */
+  justify-content: center;
+  /* Centra las tarjetas si no llenan todo el ancho */
 }
 
 .appointment-card {
@@ -144,7 +166,8 @@
 }
 
 .card-header {
-  background-color: #3498db; /* Azul para el encabezado de la tarjeta */
+  background-color: #3498db;
+  /* Azul para el encabezado de la tarjeta */
   color: #ffffff;
   padding: 0.8rem 1.2rem;
   display: flex;
@@ -177,7 +200,8 @@
 .card-body {
   padding: 1.2rem;
   color: #333333;
-  flex-grow: 1; /* Permite que el cuerpo ocupe el espacio restante */
+  flex-grow: 1;
+  /* Permite que el cuerpo ocupe el espacio restante */
 }
 
 .card-body p {
@@ -199,7 +223,8 @@
 }
 
 .view-calendar-button {
-  background-color: #2ecc71; /* Verde para el botón */
+  background-color: #2ecc71;
+  /* Verde para el botón */
   color: #ffffff;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -212,7 +237,8 @@
 }
 
 .view-calendar-button:hover {
-  background-color: #27ae60; /* Verde más oscuro al pasar el ratón */
+  background-color: #27ae60;
+  /* Verde más oscuro al pasar el ratón */
   transform: translateY(-2px);
 }
 
@@ -251,7 +277,8 @@
   }
 
   .appointments-grid {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    grid-template-columns: 1fr;
+    /* Una columna en pantallas pequeñas */
   }
 }
 
@@ -273,7 +300,8 @@
   }
 
   .appointment-card {
-    margin: 0 auto; /* Centra las tarjetas en pantallas muy pequeñas */
+    margin: 0 auto;
+    /* Centra las tarjetas en pantallas muy pequeñas */
     max-width: 350px;
   }
 }

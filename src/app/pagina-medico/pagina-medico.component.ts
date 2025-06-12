@@ -45,6 +45,10 @@ export class PaginaMedicoComponent {
 
   constructor(private router: Router) {} 
 
+  goToPerfilMedico(): void {
+    this.router.navigate(['/perfil-medico']);
+    console.log('Navegando al perfil del doctor...');
+  }
 
  goToNuevoTurno(): void {
     this.router.navigate(['/nuevo-turno']); 
