@@ -1,0 +1,85 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <h2>Perfil de Médico</h2>
+  </div>
+
+  <div class="profile-body">
+    <div class="main-info">
+      <div class="profile-picture-container">
+        <img [src]="medico.fotoUrl || 'assets/images/doctor-sin-fondo.png'" alt="Foto de perfil del Médico" class="profile-picture">
+      </div>
+      <div class="personal-details">
+        <div class="detail-row">
+          <div class="detail-item">
+            <span class="label"><i class="iconoir-user"></i> Nombre completo:</span>
+            <span class="value">{{ medico.nombreCompleto }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label"><i class="iconoir-calendar"></i> Fecha de nacimiento:</span>
+            <span class="value">{{ medico.fechaNacimiento }}</span>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-item">
+            <span class="label"><i class="iconoir-credit-card"></i> Cédula de identidad:</span>
+            <span class="value">{{ medico.cedulaIdentidad }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label"><i class="iconoir-user-square"></i> Sexo:</span>
+            <span class="value">{{ medico.sexo }}</span>
+          </div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-item">
+            <span class="label"><i class="iconoir-blood-type"></i> Tipo de sangre:</span>
+            <span class="value">{{ medico.tipoSangre }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label"><i class="iconoir-heart"></i> Estado civil:</span>
+            <span class="value">{{ medico.estadoCivil }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="additional-info">
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="label"><i class="iconoir-earth"></i> Nacionalidad:</span>
+          <span class="value">{{ medico.nacionalidad }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label"><i class="iconoir-pin-alt"></i> Lugar de nacimiento:</span>
+          <span class="value">{{ medico.lugarNacimiento }}</span>
+        </div>
+      </div>
+       <div class="detail-row">
+        <div class="detail-item">
+          <span class="label"><i class="iconoir-maps-arrow"></i> Dirección:</span>
+          <span class="value">{{ medico.direccion }}</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <span class="label"><i class="iconoir-smartphone-device"></i> Teléfono móvil:</span>
+          <span class="value">{{ medico.telefonoMovil }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label"><i class="iconoir-phone-add"></i> Número de emergencia:</span>
+          <span class="value">{{ medico.numeroEmergencia }}</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="work-info">
+      <div class="detail-item">
+          <span class="label"><i class="iconoir-hospital"></i> Trabaja en:</span>
+          <span class="value">{{ medico.trabajaEn }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,9 +17,10 @@ import { CalendarAdminComponent } from './calendar-admin/calendar-admin.componen
 import { PaginaClinicaComponent } from './pagina-clinica/pagina-clinica.component';
 import { PendingShiftsComponent } from './pending-shifts/pending-shifts.component';
 import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.component';
+import { PerfilMedicoComponent } from './perfil-medico/perfil-medico.component';
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
-import { SoporteComponent } from './soporte/soporte.component'; // ✅ NUEVA LÍNEA IMPORTADA
+import { SoporteComponent } from './soporte/soporte.component'; 
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
@@ -42,5 +43,9 @@ export const routes: Routes = [
   { path: 'calendario-clinica', component: CalendarClinicaComponent },
   { path: 'pacientes-penalizados', component: PacientesPenalizadosComponent },
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
-  { path: 'soporte', component: SoporteComponent } // ✅ NUEVA RUTA AÑADIDA
+  { path: 'soporte', component: SoporteComponent },
+  {
+    path: 'perfil-medico',
+    component: PerfilMedicoComponent
+  },
 ];
