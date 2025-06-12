@@ -41,13 +41,13 @@
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Una columna para la lista, más simple */
+  grid-template-columns: 1fr; 
   gap: 1.5rem;
 }
 
 .doctor-card {
   display: flex;
-  flex-wrap: wrap; /* Permite que se adapte a pantallas pequeñas */
+  flex-wrap: wrap; 
   gap: 20px;
   background-color: white;
   padding: 20px;
@@ -70,8 +70,8 @@
 }
 
 .doctor-info {
-  flex: 1; /* Ocupa el espacio restante */
-  min-width: 250px; /* Para evitar que se comprima demasiado */
+  flex: 1; 
+  min-width: 250px; 
 }
 
 .doctor-info h3 {
@@ -87,13 +87,13 @@
 }
 
 .card-actions {
-  flex-basis: 100%; /* El footer ocupa toda una nueva línea en pantallas grandes */
+  flex-basis: 100%; 
   text-align: right;
   margin-top: 10px;
 }
 
 .card-actions button {
-  background-color: #2ecc71; /* Verde */
+  background-color: #2ecc71; 
   color: white;
   border: none;
   padding: 10px 20px;
@@ -108,7 +108,6 @@
   background-color: #27ae60;
 }
 
-/* Responsividad */
 @media (max-width: 600px) {
   .doctor-card {
     flex-direction: column;
