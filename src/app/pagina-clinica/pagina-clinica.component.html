@@ -13,11 +13,12 @@
     </div>
     <nav class="clinica-nav">
       <ul>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#">Contacto de servicio técnico</a></li>
+        <li><a (click)="goToSobreNosotros()" class="nav-link">Sobre Nosotros</a></li>
+        <li><a (click)="goToSoporte()" class="nav-link">Servicio Técnico</a></li>
         <li><a (click)="goToCalendario()"> <span class="icon">📅</span> Calendario</a></li>
+        <li><a (click)="goToRegistroMedico()"> <span class="icon">✏️</span> Registrar Médico</a></li>
         <li><button class="nav-button"><span class="icon">👨‍⚕️</span> Lista de médicos</button></li>
-        <li><button class="nav-button"><span class="icon">⚠️</span> Lista de penalizados</button></li>
+        <li><a (click)="goToListaPenalizados()"> <span class="icon">⚠️</span> Pacientes Penalizados</a></li>
         </ul>
     </nav>
   </header>

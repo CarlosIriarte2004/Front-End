@@ -19,9 +19,10 @@ import { PendingShiftsComponent } from './pending-shifts/pending-shifts.componen
 import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.component';
 import { PerfilMedicoComponent } from './perfil-medico/perfil-medico.component';
 import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
-import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component';
-import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component'; // ✅ AÑADIDO
+import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component';
+import { RegistroMedicoComponent } from './registro-medico/registro-medico.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
@@ -46,5 +47,6 @@ export const routes: Routes = [
   { path: 'sobre-nosotros', component: SobreNosotrosComponent },
   { path: 'soporte', component: SoporteComponent },
   { path: 'perfil-medico', component: PerfilMedicoComponent },
-  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent } // ✅ AÑADIDO
+  { path: 'hospitales-clinicas', component: HospitalesClinicasComponent },
+   { path: 'registro-medico', component: RegistroMedicoComponent}
 ];

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; 
+import { RouterModule, Router } from '@angular/router'; // ✅ IMPORTADO
 
 @Component({
   selector: 'app-pagina-medico',
-  standalone: true, 
-  imports: [CommonModule], 
+  standalone: true,
+  imports: [CommonModule, RouterModule], // ✅ AÑADIDO RouterModule
   templateUrl: './pagina-medico.component.html',
   styleUrls: ['./pagina-medico.component.css']
 })
@@ -43,15 +43,25 @@ export class PaginaMedicoComponent {
     }
   ];
 
-  constructor(private router: Router) {} 
+  constructor(private router: Router) {}
 
   goToPerfilMedico(): void {
-    this.router.navigate(['/perfil-medico']);
-    console.log('Navegando al perfil del doctor...');
-  }
+    this.router.navigate(['/perfil-medico']);
+    console.log('Navegando al perfil del doctor...');
+  }
 
- goToNuevoTurno(): void {
-    this.router.navigate(['/nuevo-turno']); 
+  goToSobreNosotros(): void {
+    this.router.navigate(['/sobre-nosotros']);
+    console.log('Navegando a sobre nosotros...');
+  }
+
+  goToSoporte(): void {
+    this.router.navigate(['/soporte']);
+    console.log('Navegando a soporte...');
+  }
+
+  goToNuevoTurno(): void {
+    this.router.navigate(['/nuevo-turno']);
     console.log('Navegando a la página de nuevo turno...');
   }
 
@@ -69,7 +79,7 @@ export class PaginaMedicoComponent {
     this.router.navigate(['/calendario-doctor']);
     console.log('Navegando a la página de calendario...');
   }
-  
+
   verEnCalendario(turno: any): void {
     console.log('Ver en calendario:', turno);
   }
