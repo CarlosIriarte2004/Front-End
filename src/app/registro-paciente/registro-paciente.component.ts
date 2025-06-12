@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms'; 
 import { Router } from '@angular/router'; 
+import { PatientRegisterService } from '../services/patient.register.service';
 
 interface Paciente {
   nombreCompleto: string;
@@ -16,6 +17,7 @@ interface Paciente {
   telefonoFijo: string;
   telefonoCelular: string;
   correoElectronico: string;
+  contrasena: string; // ✅ Campo agregado
 }
 
 @Component({
@@ -39,25 +41,49 @@ export class RegistroPacienteComponent {
     direccion: '',
     telefonoFijo: '',
     telefonoCelular: '',
-    correoElectronico: ''
+    correoElectronico: '',
+    contrasena: ''
   };
 
-  constructor(private router: Router) {}
+   verContrasena: boolean = false;
+
+  constructor(
+    private router: Router,
+    private patientsRegister: PatientRegisterService
+  ) {}
 
   crearCuenta(): void {
-
     console.log('Datos del paciente a registrar:', this.paciente);
+    // ✅ Opcional para pruebas (borrar luego en producción)
+    console.log('Contraseña ingresada:', this.paciente.contrasena);
 
-
-    if (!this.paciente.nombreCompleto || !this.paciente.cedulaIdentidad || !this.paciente.correoElectronico) {
-      console.error('Por favor, complete los campos obligatorios (Nombre, Cédula, Correo).');
+    if (!this.paciente.nombreCompleto || !this.paciente.cedulaIdentidad || !this.paciente.correoElectronico || !this.paciente.contrasena) {
+      console.error('Por favor, complete los campos obligatorios (Nombre, Cédula, Correo, Contraseña).');
       return;
     }
 
-    setTimeout(() => {
-      console.log('Cuenta creada exitosamente para:', this.paciente.nombreCompleto);
-      alert('¡Cuenta creada exitosamente!'); 
-    }, 1500); 
+    const datosTransformados = {
+      ci: this.paciente.cedulaIdentidad,
+      nombre: this.paciente.nombreCompleto.split(' ')[0],
+      apellido: this.paciente.nombreCompleto.split(' ').slice(1).join(' '),
+      contrasenia: this.paciente.contrasena,
+      estadoCivil: this.paciente.estadoCivil,
+      direccion: this.paciente.direccion,
+      correoElectronico: this.paciente.correoElectronico,
+      tipoSangre: this.paciente.tipoSangre,
+      telefono: Number(this.paciente.telefonoCelular || this.paciente.telefonoFijo || 0),
+      lugarNac: this.paciente.lugarNacimiento,
+      genero: this.paciente.genero
+    };
+
+    this.patientsRegister.crearPaciente(datosTransformados).subscribe({
+      next: (res) => {
+        alert('Paciente registrado con éxito');
+      },
+      error: (err) => {
+        console.error('Error al registrar paciente:', err);
+        alert('Error al registrar paciente');
+      }
+    });
   }
 }
-

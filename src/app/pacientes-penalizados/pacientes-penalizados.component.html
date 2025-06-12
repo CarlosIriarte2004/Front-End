@@ -1,0 +1,27 @@
+<div class="contenedor">
+  <div class="encabezado">
+    <img src="assets/images/los-olivos.png" alt="Logo Los Olivos" class="logo">
+    <h2>PACIENTES PENALIZADOS</h2>
+  </div>
+
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>CI</th>
+          <th>Motivo</th>
+          <th>Fecha de penalización</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paciente of pacientes">
+          <td>{{ paciente.nombre }}</td>
+          <td>{{ paciente.ci }}</td>
+          <td>{{ paciente.motivo }}</td>
+          <td>{{ paciente.fecha }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

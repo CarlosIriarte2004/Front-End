@@ -15,76 +15,35 @@ import { InicioConsultaComponent } from './inicio-consulta/inicio-consulta.compo
 import { CalendarDoctorComponent } from './calendar-doctor/calendar-doctor.component';
 import { CalendarAdminComponent } from './calendar-admin/calendar-admin.component';
 import { PaginaClinicaComponent } from './pagina-clinica/pagina-clinica.component';
+import { PendingShiftsComponent } from './pending-shifts/pending-shifts.component';
 import { CalendarClinicaComponent } from './calendar-clinica/calendar-clinica.component';
 import { PerfilMedicoComponent } from './perfil-medico/perfil-medico.component';
+import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes-penalizados.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { SoporteComponent } from './soporte/soporte.component'; 
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'bienvenida', pathMatch: 'full' }, 
-
-  {
-    path: 'bienvenida',
-    component: WelcomeComponent
-  },
-  {
-    path: 'login-doctor',
-    component: LoginDoctorComponent
-  },
-  {
-    path: 'login-paciente',
-    component: PatientLoginComponent
-  },
-  {
-    path: 'login-admin',
-    component: AdminLoginComponent
-  },
-  {
-    path: 'login-hospital',
-    component: HospitalLoginComponent
-  },
-  {
-    path: 'pagina-clinica',
-    component: PaginaClinicaComponent
-  },
-  {
-    path: 'registro-paciente',
-    component: RegistroPacienteComponent
-  },
-  {
-    path: 'registro-turno',
-    component: ShiftRecordComponent
-  },
-  {
-    path: 'pagina-medico',
-    component: PaginaMedicoComponent
-  },
-  {
-    path: 'nuevo-turno', 
-    component: NuevoTurnoComponent
-  },
-  {
-    path: 'pagina-admin',
-    component: AdminPageComponent
-  },
-  {
-    path: 'perfil-paciente',
-    component: PatientProfileComponent
-  },
-  {
-    path: 'inicio-consulta',
-    component: InicioConsultaComponent
-  },
-  {
-    path: 'calendario-doctor',
-    component: CalendarDoctorComponent
-  },
-  {
-    path: 'calendario-admin',
-    component: CalendarAdminComponent
-  },
-  {
-    path: 'calendario-clinica',
-    component: CalendarClinicaComponent
-  },
+  { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
+  { path: 'bienvenida', component: WelcomeComponent },
+  { path: 'login-doctor', component: LoginDoctorComponent },
+  { path: 'login-paciente', component: PatientLoginComponent },
+  { path: 'login-admin', component: AdminLoginComponent },
+  { path: 'login-hospital', component: HospitalLoginComponent },
+  { path: 'pagina-clinica', component: PaginaClinicaComponent },
+  { path: 'registro-paciente', component: RegistroPacienteComponent },
+  { path: 'registro-turno', component: ShiftRecordComponent },
+  { path: 'pagina-medico', component: PaginaMedicoComponent },
+  { path: 'nuevo-turno', component: NuevoTurnoComponent },
+  { path: 'pagina-admin', component: AdminPageComponent },
+  { path: 'perfil-paciente', component: PatientProfileComponent },
+  { path: 'inicio-consulta', component: InicioConsultaComponent },
+  { path: 'calendario-doctor', component: CalendarDoctorComponent },
+  { path: 'calendario-admin', component: CalendarAdminComponent },
+  { path: 'turnos-pendientes', component: PendingShiftsComponent },
+  { path: 'calendario-clinica', component: CalendarClinicaComponent },
+  { path: 'pacientes-penalizados', component: PacientesPenalizadosComponent },
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent },
+  { path: 'soporte', component: SoporteComponent },
   {
     path: 'perfil-medico',
     component: PerfilMedicoComponent

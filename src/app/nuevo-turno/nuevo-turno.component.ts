@@ -24,6 +24,5 @@ export class NuevoTurnoComponent {
       fecha: this.fecha,
       hora: this.hora
     });
-    // Aquí agregar la lógica para enviar estos datos a tu backend
   }
 }
