@@ -35,7 +35,7 @@ export class LoginDoctorComponent {
       ).subscribe({
         next: res => {
           console.log('Login existoso', res);
-          localStorage.setItem('token', res.token_access);
+          localStorage.setItem('token', res.token);
           this.router.navigate(['/pagina-medico']);
         },
         error: err => {

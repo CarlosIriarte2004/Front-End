@@ -60,6 +60,7 @@ export class MedicProfileService {
     nombreCompleto: `${medico.nombre} ${medico.apellido}`,
     fechaNacimiento: medico.fechaNac,
     cedulaIdentidad: medico.ci.toString(),
+    Especialidad: 'Pediatria',
     sexo: medico.genero,
     tipoSangre: medico.tipoSangre,
     estadoCivil: medico.estadoCivil,
