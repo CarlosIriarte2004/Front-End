@@ -16,12 +16,10 @@
     <nav class="main-nav">
       <ul>
         <li>
-          <a [routerLink]="['/sobre-nosotros']" routerLinkActive="active" class="nav-link">
-            Sobre Nosotros
-          </a>
+          <a (click)="goToSobreNosotros()" class="nav-link">Sobre Nosotros</a>
         </li>
         <li>
-          <a href="#" class="nav-link">Contacto de servicio técnico</a>
+          <a (click)="goToSoporte()" class="nav-link">Servicio Técnico</a>
         </li>
         <li>
           <a (click)="goToCalendario()" class="nav-link">Calendario</a>

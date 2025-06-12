@@ -22,6 +22,7 @@ import { PacientesPenalizadosComponent } from './pacientes-penalizados/pacientes
 import { SoporteComponent } from './soporte/soporte.component';
 import { HospitalesClinicasComponent } from './hospitales-clinicas/hospitales-clinicas.component';
 import { RegistroMedicoComponent } from './registro-medico/registro-medico.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'bienvenida', pathMatch: 'full' },
@@ -43,11 +44,7 @@ export const routes: Routes = [
   { path: 'turnos-pendientes', component: PendingShiftsComponent },
   { path: 'calendario-clinica', component: CalendarClinicaComponent },
   { path: 'pacientes-penalizados', component: PacientesPenalizadosComponent },
-  {
-    path: 'sobre-nosotros',
-    loadComponent: () =>
-      import('./sobre-nosotros/sobre-nosotros.component').then(m => m.SobreNosotrosComponent)
-  },
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent },
   { path: 'soporte', component: SoporteComponent },
   { path: 'perfil-medico', component: PerfilMedicoComponent },
   { path: 'hospitales-clinicas', component: HospitalesClinicasComponent },

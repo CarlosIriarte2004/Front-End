@@ -1,59 +1,20 @@
 <div class="sobre-nosotros-container">
-  <!-- Imagen de fondo principal -->
-  <div class="hero-section">
-    <div class="scroll-down" (click)="scrollTo('info-section')">
-      <svg width="36" height="36" fill="white" viewBox="0 0 16 16">
-        <path d="M1.5 5.5l6 6 6-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
+  <h1 class="titulo-principal">Sobre Nosotros
+    <img src="assets/images/logo-salud-total-bolivia-sin-fondo.png" alt="Logo de Salud Total Bolivia" class="logo-titulo">
+  </h1>
 
-  <!-- Separador decorativo -->
-  <svg class="separador" viewBox="0 0 1440 100" preserveAspectRatio="none">
-    <path d="M0,100 C480,0 960,100 1440,0 L1440,100 L0,100 Z" fill="#f4f6f9" />
-  </svg>
+  <section class="seccion">
+    <h2 class="subtitulo">{{ historiaTitulo }}</h2>
+    <p class="parrafo">{{ historiaContenido }}</p>
+  </section>
 
-  <!-- Sección CONÓCENOS -->
-  <section class="info-section" id="info-section">
-    <h2 class="titulo">CONÓCENOS:</h2>
-    <p class="descripcion">
-      Salud Total Bolivia es una institución de atención médica integral que nace con el firme propósito de transformar la experiencia de los servicios de salud en nuestro país. Nos enfocamos en brindar una atención humanizada, segura y accesible para todos los ciudadanos, incorporando tecnologías modernas que permitan la automatización y optimización de procesos clave como la gestión de citas, el seguimiento de historiales clínicos y la planificación del recurso humano.
-      <br><br>
-      En un contexto donde los sistemas de salud enfrentan desafíos críticos como la fragmentación de la información, la saturación en la atención y la desorganización administrativa, Salud Total Bolivia surge como una respuesta innovadora, articulada y orientada al usuario. Nuestra propuesta combina excelencia técnica con responsabilidad social, garantizando que cada paciente reciba un servicio oportuno, digno y eficaz.
-      <br><br>
-      Nos proyectamos como una organización líder en servicios médicos digitales, aliada con centros de salud públicos y privados, promoviendo una cultura de calidad, respeto, ética profesional y mejora continua. Creemos que la salud no es solo la ausencia de enfermedad, sino un derecho fundamental que debe garantizarse con compromiso, transparencia y vocación de servicio.
-    </p>
+  <section class="seccion">
+    <h2 class="subtitulo">{{ misionTitulo }}</h2>
+    <p class="parrafo">{{ misionContenido }}</p>
+  </section>
 
-    <div class="cards-container">
-      <!-- MISIÓN -->
-      <div class="card mision">
-        <svg class="icono-svg" width="36" height="36" viewBox="0 0 24 24" fill="#0a2c52">
-          <path d="M13 2v8h8c0-4.42-3.58-8-8-8zm7.71 10.29L18 13v7c0 1.1-.9 2-2 2h-2v-6h-4v6H8c-1.1 0-2-.9-2-2v-7l-2.71-.71a.996.996 0 1 1 .42-1.94l16 4a.996.996 0 1 1-.42 1.94z"/>
-        </svg>
-        <h3>MISIÓN:</h3>
-        <p>
-          Brindar atención médica de excelencia, centrada en el paciente y fundamentada en valores éticos, humanos y profesionales. Nuestra misión es proporcionar un servicio integral que articule la tecnología, la eficiencia operativa y la calidad médica, con el objetivo de mejorar la experiencia y los resultados en salud de nuestros usuarios.
-          <br><br>
-          A través de un sistema automatizado, seguro y amigable, buscamos eliminar barreras en el acceso a la atención médica, reducir los tiempos de espera, optimizar el uso de los recursos y facilitar la toma de decisiones clínicas mediante información precisa y en tiempo real.
-          <br><br>
-          Salud Total Bolivia se compromete con el desarrollo de una cultura de salud responsable, impulsando la innovación, la educación y la empatía como ejes clave para alcanzar una atención digna y sostenible, accesible a todos los sectores de la sociedad.
-        </p>
-      </div>
-
-      <!-- VISIÓN -->
-      <div class="card vision">
-        <svg class="icono-svg" width="36" height="36" viewBox="0 0 24 24" fill="#0a2c52">
-          <path d="M12 4.5C7.305 4.5 3.253 7.61 1.5 12c1.753 4.39 5.805 7.5 10.5 7.5s8.747-3.11 10.5-7.5C20.747 7.61 16.695 4.5 12 4.5zM12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-        </svg>
-        <h3>VISIÓN:</h3>
-        <p>
-          Convertirnos en el sistema de salud digital de mayor impacto e innovación en Bolivia, reconocido a nivel nacional por transformar la gestión médica mediante soluciones tecnológicas de alto nivel, orientadas a la eficiencia, equidad y calidad del servicio.
-          <br><br>
-          Aspiramos a ser un referente institucional en atención médica privada y pública, destacando por nuestra capacidad de adaptación, transparencia, y compromiso con el bienestar integral del paciente.
-          <br><br>
-          Visualizamos un futuro en el que todas las personas, sin importar su condición social o geográfica, puedan acceder a servicios médicos modernos, personalizados y seguros, donde la tecnología sea un puente que acerque al paciente con la atención que necesita, en el momento adecuado y bajo los más altos estándares de calidad.
-        </p>
-      </div>
-    </div>
+  <section class="seccion">
+    <h2 class="subtitulo">{{ visionTitulo }}</h2>
+    <p class="parrafo">{{ visionContenido }}</p>
   </section>
 </div>

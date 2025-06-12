@@ -50,6 +50,16 @@ export class PaginaMedicoComponent {
     console.log('Navegando al perfil del doctor...');
   }
 
+  goToSobreNosotros(): void {
+    this.router.navigate(['/sobre-nosotros']);
+    console.log('Navegando a sobre nosotros...');
+  }
+
+  goToSoporte(): void {
+    this.router.navigate(['/soporte']);
+    console.log('Navegando a soporte...');
+  }
+
   goToNuevoTurno(): void {
     this.router.navigate(['/nuevo-turno']);
     console.log('Navegando a la página de nuevo turno...');
