@@ -21,6 +21,9 @@
           <td>{{ paciente.motivo }}</td>
           <td>{{ paciente.fecha }}</td>
         </tr>
+        <tr *ngIf="pacientes.length === 0">
+          <td colspan="4" style="text-align: center;">Sin pacientes penalizados por el momento</td>
+        </tr>
       </tbody>
     </table>
   </div>
