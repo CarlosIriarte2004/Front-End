@@ -14,4 +14,8 @@ export class MedicRegisterService {
     loginMedico(correoElectronico: string, contrasenia: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { correoElectronico, contrasenia });
   }
+   todosMedicos():Observable<any>{
+    return this.http.get(`${this.apiUrl}/frontendLista`)
+   }
+
 }

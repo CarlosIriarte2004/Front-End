@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { ActivatedRoute, Router } from '@angular/router'; 
+import { MedicRegisterService } from '../services/medic.register.service';
 
 
 interface Medico {
@@ -26,7 +27,7 @@ interface Especialidad {
 export class DoctorSelectionComponent implements OnInit {
 
   medicosMostrados: Medico[] = [];
-  especialidadActual: Especialidad | undefined;
+  especialidadActual: Especialidad ={id:'default',nombre:'Default'};
   isLoading: boolean = true;
 
   private todosLosMedicos: Medico[] = [
@@ -48,7 +49,8 @@ export class DoctorSelectionComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute, 
-    private router: Router 
+    private router: Router ,
+    private doctorService: MedicRegisterService
   ) {}
 
   ngOnInit(): void {
@@ -56,7 +58,7 @@ export class DoctorSelectionComponent implements OnInit {
       const idEspecialidad = params.get('idEspecialidad'); 
 
       if (idEspecialidad) {
-        this.cargarDatos(idEspecialidad);
+        this.loadMedicos(idEspecialidad);
       } else {
         console.error('No se proporcionó ID de especialidad en la ruta.');
         this.isLoading = false;
@@ -64,18 +66,22 @@ export class DoctorSelectionComponent implements OnInit {
     });
   }
 
-  cargarDatos(idEspecialidad: string): void {
+  loadMedicos(especialidadId: string): void {
     this.isLoading = true;
-
-    this.especialidadActual = this.todasLasEspecialidades.find(esp => esp.id === idEspecialidad);
-
-    this.medicosMostrados = this.todosLosMedicos.filter(medico =>
-      medico.especialidadesIds.includes(idEspecialidad)
+    this.especialidadActual.nombre=especialidadId;
+    this.doctorService.todosMedicos().subscribe({
+  next: (medicos: Medico[]) => {
+    console.log(medicos);
+    this.medicosMostrados = medicos.filter((m: Medico) =>
+      m.especialidadesIds.includes(especialidadId)
     );
-
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 300); 
+    this.isLoading = false;
+  },
+  error: (err) => {
+    console.error('Error al cargar médicos:', err);
+    this.isLoading = false;
+  }
+});
   }
 
   seleccionarMedico(idMedico: string): void {

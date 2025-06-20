@@ -36,7 +36,7 @@
           <img [src]="esp.iconoUrl" [alt]="esp.nombre" class="specialty-icon">
           <h4>{{ esp.nombre }}</h4>
           <p>{{ esp.descripcion }}</p>
-          <button (click)="verMedicosPorEspecialidad(esp.id)" class="btn-view-doctors">
+          <button (click)="verMedicosPorEspecialidad(esp.nombre)" class="btn-view-doctors">
             Ver Médicos
           </button>
         </div>

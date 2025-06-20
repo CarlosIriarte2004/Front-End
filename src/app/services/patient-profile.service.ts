@@ -45,6 +45,32 @@ interface DecodedToken {
   iat?: number;
   exp?: number;
 }
+
+interface newDecodedToken{
+  fresh: false,
+  iat: number,
+  jti: string,
+  type: string,
+  sub: {
+    id: string,
+    ci: number,
+    nombre: string,
+    apellido: string,
+    estadoCivil: string,
+    direccion: string,
+    correoElectronico: string,
+    tipoSangre: string,
+    telefono: number,
+    lugarNac: string,
+    genero: string,
+    fechaNac: string
+  },
+  nbf: number,
+  csrf: string,
+  exp: number
+}
+
+
 export interface HistorialEntry {
   id?: string; 
   fecha: string; 
@@ -79,8 +105,8 @@ export class PatientProfileService {
   }
 
   try {
-    const decoded: DecodedToken = jwtDecode(token);
-    const paciente = decoded.newPaciente;
+    const decoded: newDecodedToken = jwtDecode(token);
+    const paciente = decoded.sub;
 
     const mockPaciente: PacienteInfo = {
       nombreCompleto: `${paciente.nombre} ${paciente.apellido}`,
@@ -96,7 +122,7 @@ export class PatientProfileService {
       lugarNacimiento: paciente.lugarNac,
       direccion: paciente.direccion,
       numeroEmergencia: '',
-      estadoPenalizacion: paciente.penalizado ? 'Penalizado' : 'No penalizado',
+      estadoPenalizacion: 'No penalizado',
       fotoUrl: '/assets/images/foto-perfil.png',
     };
 

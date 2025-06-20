@@ -8,27 +8,30 @@ import { jwtDecode } from 'jwt-decode';
 
 
 interface DecodedToken {
-  newMedico: {
+  newMedico: {id: string,
+  ci: number,
+  nombre: string,
+  apellido: string,
+  correo: string,
+  genero: string,
+  fechaNac: string,
+  direccion: string,
+  telefono: number,
+  tipoSangre: string,
+  estadoCivil: string,
+  lugarNac: string,
+  clinica: {
     id: string,
-    ci: number,
     nombre: string,
-    apellido: string,
-    contrasenia: string,
-    fechaNac: string,
-    penalizado: boolean,
-    estadoCivil: string,
-    direccion: string,
-    correoElectronico: string,
-    tipoSangre: string,
-    telefono: number,
-    lugarNac: string,
-    genero: string
-    
-    // Add any other fields if present in token
-  };
+    direccion: string
+  },
+  especialidad: {
+    id: string,
+    nombre: string
+  },
   iat?: number;
   exp?: number;
-}
+}}
 
 @Injectable({
   providedIn: 'root'
@@ -54,13 +57,19 @@ export class MedicProfileService {
   try {
     const decoded: DecodedToken = jwtDecode(token);
     const medico = decoded.newMedico;
+    
+if (medico && medico.nombre) {
+  console.log(medico.nombre);
+} else {
+  console.warn('Token no contiene datos de médico o no está presente:', medico);
+}
 
     const mockMedico: MedicoProfile = {
       fotoUrl: 'assets/images/doctor-sin-fondo.png',
     nombreCompleto: `${medico.nombre} ${medico.apellido}`,
     fechaNacimiento: medico.fechaNac,
     cedulaIdentidad: medico.ci.toString(),
-    Especialidad: 'Pediatria',
+    Especialidad: medico.especialidad?.nombre ??'NO ASIGNADO',
     sexo: medico.genero,
     tipoSangre: medico.tipoSangre,
     estadoCivil: medico.estadoCivil,
@@ -69,7 +78,7 @@ export class MedicProfileService {
     direccion: medico.direccion,
     telefonoMovil: medico.telefono.toString(),
     numeroEmergencia: '(+591) 72340129',
-    trabajaEn: 'Clínica Los Olivos'
+    trabajaEn: medico.clinica?.nombre??'NO ASIGNADO'
     };
 
     return of(mockMedico);
