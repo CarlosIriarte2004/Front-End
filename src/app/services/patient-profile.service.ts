@@ -161,8 +161,8 @@ export class PatientProfileService {
   }
 
   try {
-    const decoded: DecodedToken = jwtDecode(token);
-    const paciente = decoded.newPaciente;
+    const decoded: newDecodedToken = jwtDecode(token);
+    const paciente = decoded.sub;
 
     return of(paciente.nombre);
     } catch (err) {
