@@ -72,7 +72,8 @@ export class RegistroPacienteComponent {
       tipoSangre: this.paciente.tipoSangre,
       telefono: Number(this.paciente.telefonoCelular || this.paciente.telefonoFijo || 0),
       lugarNac: this.paciente.lugarNacimiento,
-      genero: this.paciente.genero
+      genero: this.paciente.genero,
+      fechaNac: this.paciente.fechaNacimiento 
     };
 
     this.patientsRegister.crearPaciente(datosTransformados).subscribe({
