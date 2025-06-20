@@ -32,6 +32,31 @@ interface DecodedToken {
   iat?: number;
   exp?: number;
 }}
+interface newDecodedToken{
+  fresh: boolean,
+  iat: number,
+  jti: string,
+  type: string,
+  sub: {
+    _id: string,
+    ci: number,
+    nombre: string,
+    apellido: string,
+    fechaNac: string,
+    estadoCivil: string,
+    direccion: string,
+    correoElectronico: string,
+    tipoSangre: string,
+    telefono: number,
+    lugarNac: string,
+    genero: string,
+    clinica: string,
+    especialidad: string
+  },
+  nbf: number,
+  csrf: string,
+  exp: number
+}
 
 @Injectable({
   providedIn: 'root'
@@ -55,8 +80,8 @@ export class MedicProfileService {
   }
 
   try {
-    const decoded: DecodedToken = jwtDecode(token);
-    const medico = decoded.newMedico;
+    const decoded: newDecodedToken = jwtDecode(token);
+    const medico = decoded.sub;
     
 if (medico && medico.nombre) {
   console.log(medico.nombre);
@@ -69,7 +94,7 @@ if (medico && medico.nombre) {
     nombreCompleto: `${medico.nombre} ${medico.apellido}`,
     fechaNacimiento: medico.fechaNac,
     cedulaIdentidad: medico.ci.toString(),
-    Especialidad: medico.especialidad?.nombre ??'NO ASIGNADO',
+    Especialidad: medico.especialidad,
     sexo: medico.genero,
     tipoSangre: medico.tipoSangre,
     estadoCivil: medico.estadoCivil,
@@ -78,7 +103,7 @@ if (medico && medico.nombre) {
     direccion: medico.direccion,
     telefonoMovil: medico.telefono.toString(),
     numeroEmergencia: '(+591) 72340129',
-    trabajaEn: medico.clinica?.nombre??'NO ASIGNADO'
+    trabajaEn: medico.clinica
     };
 
     return of(mockMedico);
